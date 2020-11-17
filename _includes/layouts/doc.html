@@ -1,0 +1,50 @@
+---
+layout: layouts/main.html
+---
+<div class="row">
+    <div class="col-100 lg:col-20" style="border-right: 1px solid #e8e7e7;">
+        <div class="x-sidebar lg:block hidden" id="x-sidebar">
+            <button class="btn-danger lg:hidden block" onclick="xSideparOpen()">Cerrar</button>
+            <input type="text" class="form-input" id="buscar" placeholder="Buscar..." oninput="buscar()"><br>
+            <div id="resultados-de-busqueda">
+            </div>
+            <div id="docs-items">
+                <h3>Comenzar</h3>
+                <div>
+                    <a href="{{main.baseurl}}/documentacion" class="block color-200">Introducción</a>
+                    <a href="{{main.baseurl}}/documentacion/breakpoints" class="mt-5 block color-200">Breakpoints</a>
+                </div>
+                <h3>Grid System</h3>
+                <div>
+                    <a href="{{main.baseurl}}/documentacion/grid/flexbox" class="block color-200">Flexbox</a>
+                    <a href="{{main.baseurl}}/documentacion/grid/css-grid" class="block mt-5 color-200">CSS Grid</a>
+                    <a href="{{main.baseurl}}/documentacion/grid/css-grid-con-js" class="block mt-5 color-200">CSS Grid con JS</a>
+                </div>
+                <h3>Layout</h3>
+                <div>
+                    <a href="{{main.baseurl}}/documentacion/layout/alineacion" class="color-200 block">Alineación</a>
+                    <a href="{{main.baseurl}}/documentacion/layout/espaciado"
+                        class="color-200 block mt-5">Espaciado</a>
+                    <a href="{{main.baseurl}}/documentacion/layout/display"
+                        class="color-200 block mt-5">Display</a>
+                    <a href="{{main.baseurl}}/documentacion/layout/posicion"
+                        class="color-200 block mt-5">Posición</a>
+                </div>
+                <h3>Componentes</h3>
+                <div>
+                    <a href="{{main.baseurl}}/documentacion/componentes/botones" class="color-200 block">Botones</a>
+                    <a href="{{main.baseurl}}/documentacion/componentes/formulario"
+                        class="color-200 block mt-5">Formulario</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-100 lg:col-80">
+        <div class="heigth-nav o-auto">
+            <div class="container">
+                <button class="btn-info lg:hidden block" id="sidebar-btn" onclick="xSideparOpen()">Ver mas</button>
+                {{ content | safe }}
+            </div>
+        </div>
+    </div>
+</div>

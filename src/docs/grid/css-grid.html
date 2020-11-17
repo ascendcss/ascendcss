@@ -1,0 +1,176 @@
+---
+permalink: "documentacion/grid/css-grid/"
+layout: layouts/doc.html
+title: CSS Grid
+categoria: Grid System
+---
+{% markdown %}
+# CSS GRID
+# Columnas y filas
+Agrega el contenedor con la clase `grid`.
+
+Para definir las columnas use la siguiente nomenclatura:
+
+| Dispositivos | Clase |
+|---|---|
+| Pequeño / Todos | `grid-numero` |
+| md, lg y xl | `breakpoint:grid-numero` |
+
+> El numero puder ser de 0 a 20
+
+```html
+<div class="grid grid-1 md:grid-2 lg:grid-4 xl:grid-12">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+</div>
+```
+**Resultado:**
+
+<div class="grid grid-1 md:grid-2 lg:grid-4 xl:grid-12 gap-5">
+    <div class="x-col">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col">3</div>
+    <div class="x-col">4</div>
+    <div class="x-col">5</div>
+    <div class="x-col">6</div>
+    <div class="x-col">7</div>
+    <div class="x-col">8</div>
+    <div class="x-col">9</div>
+    <div class="x-col">10</div>
+    <div class="x-col">11</div>
+    <div class="x-col">12</div>
+</div>
+
+# Definir cantidad de columnas que ocupa el item
+
+Utiliza la clase `cols-numero`.
+
+```html
+<div class="grid grid-4">
+    <div class="cols-2">1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+```
+<div class="grid grid-4 gap-5">
+    <div class="x-col cols-2">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col">3</div>
+</div>
+
+# Definir en qué columna inicia un item
+Utiliza la clase `col-st-numero`.
+
+```html
+<div class="grid grid-4">
+    <div class="col-st-2">1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+```
+<div class="grid grid-4 gap-5">
+    <div class="x-col col-st-2">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col">3</div>
+</div>
+
+# Definir cantidad de filas que ocupa el item
+Utiliza la clase `rows-numero`.
+
+```html
+<div class="grid grid-4">
+    <div class="rows-2">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+</div>
+```
+<div class="grid grid-4 gap-5">
+    <div class="x-col rows-2 center">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col">3</div>
+    <div class="x-col">4</div>
+    <div class="x-col">5</div>
+    <div class="x-col">6</div>
+    <div class="x-col">7</div>
+</div>
+
+# Definir en qué fila inicia un item
+
+Utiliza la clase `row-st-numero`.
+
+```html
+<div class="grid grid-4">
+    <div class=" rows-2">1</div>
+    <div>2</div>
+    <div class=" col-st-2 row-st-2 cols-2">3</div>
+    <div>4</div>
+    <div class=" rows-2">5</div>
+</div>
+```
+<div class="grid grid-4 gap-5">
+    <div class="x-col rows-2 center">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col col-st-2 row-st-2 cols-2">3</div>
+    <div class="x-col">4</div>
+    <div class="x-col rows-2 center">5</div>
+</div>
+
+# Anidacion
+
+Para ello solo debe crear otro contenedor dentro del item o clumna con la clase: `grid`
+```html
+<div class="grid grid-4">
+    <div>1</div>
+    <div>2</div>
+    <div class="rows-2 cols-2">
+        <div class="grid grid-2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <div>4</div>
+    <div>5</div>
+</div>
+```
+<div class="grid grid-4 gap-5">
+    <div class="x-col center">1</div>
+    <div class="x-col center">2</div>
+    <div class="x-col rows-2 cols-2">
+        <div class="grid grid-2 gap-5">
+            <div class="col-style-4">1</div>
+            <div class="col-style-4">2</div>
+            <div class="col-style-4">3</div>
+            <div class="col-style-4">4</div>
+        </div>
+    </div>
+    <div class="x-col center">4</div>
+    <div class="x-col center">5</div>
+</div>
+
+# Espacio entre filas y columnas
+Los espacios se definen a travez de las siguientes clases de CSS:
+
+| Clase | Detalles |
+|---|---|
+| `gap-numero` | Crea un espacio entre filas y columnas. |
+| `cols-gap-numero` | Crea un espacio solo en las columnas. |
+| `rows-gap-numero` | Crea un espacio solo en las filas. |
+
+> El numero puede ser entre 0 y 20.
+{% endmarkdown %}

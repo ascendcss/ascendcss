@@ -1,0 +1,54 @@
+---
+permalink: "documentacion/"
+layout: layouts/doc.html
+title: Introduccion
+categoria: Comenzar
+name: Documentacion
+version: 1.0.0
+---
+{% markdown %}
+
+# Introducción
+**{{main.name}}** es una librería de CSS que te permitirá construir tu sitio web fácilmente.
+
+## Instalación
+Puede utilizar {{main.name}} instalando el archivo CSS y JavaScript (Opcional).
+
+```bash
+# npm
+npm install ascendcss
+
+# yarn
+yarn add ascendcss
+```
+
+Importe Ascend en su estructura de archivos Sass
+
+```scss
+@import "~ascendcss/ascend"
+```
+
+Use **{{main.name}}** mediante CDN con **jsDelivr**.
+Copie y pegue la hoja de estilo `<link>` en su `<head>` para poder cargar nuestro CSS.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ascendcss@{{main.version}}/src/css/ascend.min.css">
+```
+
+# Plantilla de inicio
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Titulo</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ascendcss@1.0.0/src/css/ascend.min.css">
+    </head>
+    <body>
+    
+    </body>
+</html>
+```
+{% endmarkdown %}

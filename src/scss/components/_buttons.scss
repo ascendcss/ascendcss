@@ -1,0 +1,62 @@
+.btn{
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+  outline: none;
+  text-decoration: none;
+  font-size: 1rem;
+  &:active{
+    transform: scale(0.95);
+  }
+}
+.btn-sm{
+  padding: 5px 9px;
+  font-size: 0.75rem;
+}
+.btn-lg{
+  padding: 11px 19px;
+  font-size: 1.30rem;
+}
+.rounded{
+  border-radius: 3rem;
+}
+@each $name, $color in $colors{
+  .btn-#{$name}{
+    @extend .btn;
+    background-color: $color;
+    @if $name == light {
+      color: $dark-color;
+    } @else {
+      color: #ffffff;
+    }
+    &:hover{
+      background-color: desaturate(darken($color, 8%), 30%);
+    }
+  }
+}
+@each $name, $color in $colors{
+  .btn-outln-#{$name}{
+    @extend .btn;
+    background-color: transparent;
+    border: 1px solid $color;
+    color: $color;
+    &:hover{
+      background-color: $color;
+      @if $name == light {
+        color: $dark-color;
+      } @else {
+        color: #ffffff;
+      }
+    }
+    &:active{
+      transform: scale(0.95);
+    }
+  }
+}
+.btn-link{
+  text-decoration: none;
+  border: none;
+}

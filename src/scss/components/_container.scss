@@ -1,0 +1,14 @@
+.container {
+  @include xs {
+    padding: 5px 15px;
+  }
+  @include sm {
+    padding: 10px 15px;
+  }
+  @include md {
+    padding: 5px 60px;
+  }
+  @include lg {
+    padding: 5px 60px;
+  }
+}

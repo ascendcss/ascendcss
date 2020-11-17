@@ -1,0 +1,175 @@
+---
+permalink: "documentacion/grid/css-grid-con-js/"
+layout: layouts/doc.html
+title: CSS Grid con JavaScript
+categoria: Grid System
+---
+{% markdown %}
+# CSS GRID CON JS
+Usa JS para crear Layouts, para ello lo unico que debe de hacer es importar nuestro archivo de JS.
+
+## Instalacion
+Copie y pegue <code>&lt;script&gt;</code> justo antes de la etiqueta de cierre <code>&lt;/body&gt;</code>, para
+poder habilitarlo.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/ascendcss@{{main.version}}/src/js/ascend.min.js"></script>
+<script>
+    ascendGrid();
+</script>
+```
+
+## Configuracion en el contenedor
+Agrege clase `ascend-grid` y luego de ello los atributos de la siguiente manera:
+
+| | Atributo |
+|---|---|
+| Comunas | `breakpoint:col="-CSS-"` |
+| Filas | `breakpoint:row="-CSS-"` |
+
+```html
+<div class="ascend-grid gap-10"
+sm:col="1fr 3fr" md:col="repeat(2, 1fr)" lg:col="repeat(4, 1fr)" xl:col="2fr 4fr repeat(2, 1fr)"
+sm:row="repeat(2, 50px 30px)" md:row="repeat(2, 70px 50px)" lg:row="50px 70px" xl:row="70px 50px">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+</div>
+```
+**Resultado:**
+
+<div class="ascend-grid gap-10"
+sm:col="1fr 3fr" md:col="repeat(2, 1fr)" lg:col="repeat(4, 1fr)" xl:col="2fr 4fr repeat(2, 1fr)"
+sm:row="repeat(2, 50px 30px)" md:row="repeat(2, 70px 50px)" lg:row="50px 70px" xl:row="70px 50px">
+    <div class="x-col center">1</div>
+    <div class="x-col center">2</div>
+    <div class="x-col center">3</div>
+    <div class="x-col center">4</div>
+    <div class="x-col center">5</div>
+    <div class="x-col center">6</div>
+    <div class="x-col center">7</div>
+    <div class="x-col center">8</div>
+</div>
+
+# Definir cantidad de columnas que ocupa el item
+
+Utiliza la clase `cols-numero`.
+
+```html
+<div class="ascend-grid" sm:col="repeat(4, 1fr)">
+    <div>1</div>
+    <div>2</div>
+    <div class="cols-2">3</div>
+</div>
+```
+<div class="ascend-grid gap-10" sm:col="repeat(4, 1fr)">
+    <div class="x-col">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col    cols-2">3</div>
+</div>
+
+# Definir en qué columna inicia un item
+Utiliza la clase `col-st-numero`
+
+```html
+<div class="ascend-grid" sm:col="repeat(4, 1fr)">
+    <div class="col-st-3">1</div>
+    <div >2</div>
+</div>
+```
+<div class="ascend-grid gap-10" sm:col="repeat(4, 1fr)">
+    <div class="x-col cols-2 col-st-3">1</div>
+</div>
+
+# Definir cantidad de filas que ocupa el item
+
+Utiliza la clase `rows-numero`
+
+```html
+<div class="ascend-grid" sm:col="repeat(2, 1fr)">
+    <div class="rows-2">1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+```
+<div class="ascend-grid gap-10" sm:col="repeat(2, 1fr)">
+    <div class="x-col rows-2 center">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col">3</div>
+</div>
+
+# Definir en qué fila inicia un item
+Utiliza la clase `row-st-numero`
+
+```html
+<div class="ascend-grid" sm:col="repeat(4, 1fr)">
+    <div class=" rows-2">1</div>
+    <div>2</div>
+    <div class=" col-st-2 row-st-2 cols-2">3</div>
+    <div>4</div>
+    <div class=" rows-2">5</div>
+</div>
+```
+<div class="ascend-grid gap-10" sm:col="repeat(4, 1fr)">
+    <div class="x-col rows-2 center">1</div>
+    <div class="x-col">2</div>
+    <div class="x-col col-st-2 row-st-2 cols-2">3</div>
+    <div class="x-col">4</div>
+    <div class="x-col rows-2 center">5</div>
+</div>
+
+# Anidacion
+
+Para ello solo debe crear otro contenedor dentro del item o columna con la clase: `ascend-grid`.
+
+```html
+<div class="ascend-grid" sm:col="repeat(4, 1fr)">
+    <div class="cols-2 rows-2">
+        <div class="ascend-grid" sm:col="repeat(2, 1fr)">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+```
+
+<div class="ascend-grid gap-5" sm:col="repeat(4, 1fr)">
+    <div class="x-col cols-2 rows-2">
+        <div class="ascend-grid gap-5" sm:col="repeat(2, 1fr)">
+            <div class="col-style-4">1</div>
+            <div class="col-style-4">2</div>
+            <div class="col-style-4">3</div>
+            <div class="col-style-4">4</div>
+        </div>
+    </div>
+    <div class="x-col center">2</div>
+    <div class="x-col center">3</div>
+    <div class="x-col center">4</div>
+    <div class="x-col center">5</div>
+</div>
+
+# Espacio entre filas y columnas
+Los espacios se definen a travez de las siguientes clases de CSS:
+
+| Clase | Detalles |
+|---|---|
+| `gap-numero` | Crea un espacio entre filas y columnas. |
+| `cols-gap-numero` | Crea un espacio solo en las columnas. |
+| `rows-gap-numero` | Crea un espacio solo en las filas. |
+
+> El numero puede ser entre 0 y 20.
+
+
+<br><br>
+{% endmarkdown %}

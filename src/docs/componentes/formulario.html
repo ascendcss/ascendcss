@@ -1,0 +1,176 @@
+---
+permalink: "documentacion/componentes/formulario/"
+layout: layouts/doc.html
+title: Formulario
+categoria: Componentes
+---
+{% markdown %}
+# Formulario
+
+<form class="form">
+    <label class="form-label">
+        Correo Electronico
+    </label>
+    <input type="email" class="form-input">
+    <label class="form-label">
+        Nombres
+    </label>
+    <input type="text" class="form-input">
+    <label class="form-label">
+        Apellidos
+    </label>
+    <input type="text" class="form-input">
+    <label class="form-label">
+        Edad
+    </label>
+    <input type="number" class="form-input">
+    <label class="form-label">
+        Fecha
+    </label>
+    <input type="date" class="form-input">
+    <label class="form-label">
+        Seleccionar
+    </label>
+    <select name="select" class="form-input">
+        <option value="value1">Value 1</option>
+        <option value="value2" selected>Value 2</option>
+        <option value="value3">Value 3</option>
+    </select>
+    <button class="btn btn-success">Enviar</button>
+</form>
+
+```html
+<form class="form">
+    <label class="form-label">
+        Correo Electronico
+    </label>
+    <input type="email" class="form-input">
+
+    <label class="form-label">
+        Nombres
+    </label>
+    <input type="text" class="form-input">
+
+    <label class="form-label">
+        Apellidos
+    </label>
+    <input type="text" class="form-input">
+
+    <label class="form-label">
+        Edad
+    </label>
+    <input type="number" class="form-input">
+
+    <label class="form-label">
+        Fecha
+    </label>
+    <input type="date" class="form-input">
+    
+    <label class="form-label">
+        Seleccionar
+    </label>
+    <select name="select" class="form-input">
+        <option value="value1">Value 1</option>
+        <option value="value2" selected>Value 2</option>
+        <option value="value3">Value 3</option>
+    </select>
+    
+    <button class="btn btn-success">Enviar</button>
+</form>
+```
+# Formulario Responsive
+
+<form class="form">
+    <div class="grid xs:grid-1 lg:grid-2 gap-10">
+        <div>
+            <label class="form-label">
+                Correo Electronico
+            </label>
+            <input type="email" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Nombres
+            </label>
+            <input type="text" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Apellidos
+            </label>
+            <input type="text" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Edad
+            </label>
+            <input type="number" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Fecha
+            </label>
+            <input type="date" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Seleccionar
+            </label>
+            <select name="select" class="form-input">
+                <option value="value1">Value 1</option>
+                <option value="value2" selected>Value 2</option>
+                <option value="value3">Value 3</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-success">Enviar</button>
+</form>
+
+```html
+<form class="form">
+    <div class="grid xs:grid-1 lg:grid-2 gap-10">
+        <div>
+            <label class="form-label">
+                Correo Electronico
+            </label>
+            <input type="email" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Nombres
+            </label>
+            <input type="text" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Apellidos
+            </label>
+            <input type="text" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Edad
+            </label>
+            <input type="number" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Fecha
+            </label>
+            <input type="date" class="form-input">
+        </div>
+        <div>
+            <label class="form-label">
+                Seleccionar
+            </label>
+            <select name="select" class="form-input">
+                <option value="value1">Value 1</option>
+                <option value="value2" selected>Value 2</option>
+                <option value="value3">Value 3</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-success">Enviar</button>
+</form>
+```
+{% endmarkdown %}

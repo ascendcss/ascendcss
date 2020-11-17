@@ -1,0 +1,57 @@
+$primary-color: #7D62FF;
+$secondary-color: #FFFF;
+$color-500: #17202A;
+$color-400: #1B2631;
+$color-300: #2d3237;
+$color-200: #35393D;
+$color-100: #5c5c5c;
+
+$warning-color: #F7BB26;
+$danger-color: rgb(228, 3, 52);
+$success-color: #28B463;
+$info-color: #0099ff;
+$dark-color: #212121;
+$light-color: #EEEEEE;
+
+$screen-xs: 0em;
+$screen-sm: 0em;
+$screen-md: 40em;
+$screen-lg: 64em;
+$screen-xl: 90em;
+
+$breakpoints : (
+  xs: $screen-xs, // 0px
+  sm: $screen-sm, // 512px
+  md: $screen-md, // 768px
+  lg: $screen-lg, //1024px
+  xl: $screen-xl //1440px
+);
+
+$colors: (
+  warning: $warning-color,
+  danger: $danger-color,
+  success: $success-color,
+  info: $info-color,
+  primary: $primary-color,
+  dark: $dark-color,
+  light: $light-color,
+);
+
+$default-colors: (
+  navy: #001f3f,
+  lime: #01FF70,
+  red : #fd0e35,
+  teal: #39CCCC,
+  orange : #FF851B,
+  yellow : #FFDC00,
+  green : #2ECC40,
+  blue : #0074D9,
+  purple : #B410E1,
+  pink : #F166DE,
+  brown : #A0522D,
+  gray : #AAAAAA,
+  black : #000000,
+  white : #FFFFFF,
+  lightblue: #39bcf0,
+  blueviolet: #9407F5,
+)

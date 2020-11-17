@@ -1,0 +1,10 @@
+---
+permalink: /search.json
+---
+[{% for doc in collections.docs %}
+   {
+      "title":"{{doc.data.title}}",
+      "category":{% if doc.data.categoria == null %}null{% else %}"{{doc.data.categoria}}"{% endif %},
+      "url":"{{main.baseurl}}{{doc.url}}"
+   }{% if forloop.last == false %},{% endif %}{% endfor %}
+]

@@ -1,0 +1,60 @@
+@for $i from 1 through 6 {
+  h#{$i} {
+    color: $color-300;
+  }
+}
+p {
+  margin: 10px 0px;
+  color: $color-200;
+}
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0;
+}
+table > tbody > tr > td,
+table > tbody > tr > th,
+table > tfoot > tr > td,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > thead > tr > th {
+  padding: 0.7rem;
+  vertical-align: top;
+  border: 1px solid #e6e9eb;
+  color: $color-300;
+}
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.color-500 {
+  color: $color-500;
+}
+.color-400 {
+  color: $color-400;
+}
+.color-300 {
+  color: $color-300;
+}
+.color-200 {
+  color: $color-200;
+}
+.color-100 {
+  color: $color-100;
+}
+blockquote {
+  background: #f0f0f0;
+  border-left: 0.5rem solid $primary-color;
+  margin: 1.3rem 10px;
+  padding: 0.3rem 10px;
+  color: $color-300;
+}
+ul,
+ol {
+  color: $color-300;
+}
