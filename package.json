@@ -1,6 +1,6 @@
 {
   "name": "ascendcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ascend es una librería de CSS que te permitirá crear layouts para tu sitio web de la forma mas rápida y amigable posible.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "design",
     "layout"
   ],
-  "author": "",
+  "author": "Xpend Group",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -35,5 +35,5 @@
   "bugs": {
     "url": "https://github.com/ascendcss/ascendcss/issues"
   },
-  "homepage": "https://acendcss.com/"
+  "homepage": "https://acendcss.com"
 }

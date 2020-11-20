@@ -1,74 +1,20 @@
 /* Only */
-/*
-    * Ascend un proyecto de Xpend Group
-*/
 /* RESET */
 html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
   font-family: sans-serif; }
 
-* {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
 body {
   margin: 0; }
 
-main {
-  display: block; }
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-  overflow: visible; }
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-a {
-  background-color: transparent; }
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; }
-
-b,
-strong {
-  font-weight: bolder; }
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-small {
-  font-size: 80%; }
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -0.25em; }
-
-sup {
-  top: -0.5em; }
-
 img {
-  border-style: none; }
+  max-width: 100%;
+  height: auto; }
 
 button,
 input,
@@ -119,9 +65,6 @@ legend {
   padding: 0;
   white-space: normal; }
 
-progress {
-  vertical-align: baseline; }
-
 textarea {
   overflow: auto; }
 
@@ -145,15 +88,6 @@ textarea {
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit; }
-
-details {
-  display: block; }
-
-summary {
-  display: list-item; }
-
-template {
-  display: none; }
 
 [hidden] {
   display: none; }
@@ -1100,76 +1034,23 @@ template {
   padding-bottom: 2rem; }
 
 /* Otros */
-h1 {
-  color: #2d3237; }
-
-h2 {
-  color: #2d3237; }
-
-h3 {
-  color: #2d3237; }
-
-h4 {
-  color: #2d3237; }
-
-h5 {
-  color: #2d3237; }
-
-h6 {
-  color: #2d3237; }
-
-p {
-  margin: 10px 0px;
-  color: #35393D; }
-
-a {
-  text-decoration: none;
-  color: #7D62FF; }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.6rem 0; }
-
-table > tbody > tr > td,
-table > tbody > tr > th,
-table > tfoot > tr > td,
-table > tfoot > tr > th,
-table > thead > tr > td,
-table > thead > tr > th {
-  padding: 0.7rem;
-  vertical-align: top;
-  border: 1px solid #e6e9eb;
-  color: #2d3237; }
-
 .link:hover {
   text-decoration: underline; }
 
 .color-500 {
-  color: #17202A; }
+  color: #17202a; }
 
 .color-400 {
-  color: #1B2631; }
+  color: #1b2631; }
 
 .color-300 {
   color: #2d3237; }
 
 .color-200 {
-  color: #35393D; }
+  color: #35393d; }
 
 .color-100 {
   color: #5c5c5c; }
-
-blockquote {
-  background: #f0f0f0;
-  border-left: 0.5rem solid #7D62FF;
-  margin: 1.3rem 10px;
-  padding: 0.3rem 10px;
-  color: #2d3237; }
-
-ul,
-ol {
-  color: #2d3237; }
 
 /* Contenedores */
 @media only screen and (min-width: 0em) {
@@ -1189,6 +1070,9 @@ ol {
     padding: 5px 60px; } }
 
 /* BOTONES */
+:root {
+  --md-radius: 1rem; }
+
 .btn, .btn-warning, .btn-danger, .btn-success, .btn-info, .btn-primary, .btn-dark, .btn-light, .btn-outln-warning, .btn-outln-danger, .btn-outln-success, .btn-outln-info, .btn-outln-primary, .btn-outln-dark, .btn-outln-light {
   padding: 10px 12px;
   margin: 8px 0;
@@ -1212,11 +1096,8 @@ ol {
   padding: 11px 19px;
   font-size: 1.30rem; }
 
-.rounded {
-  border-radius: 3rem; }
-
 .btn-warning {
-  background-color: #F7BB26;
+  background-color: #f7bb26;
   color: #ffffff; }
   .btn-warning:hover {
     background-color: #c79b2d; }
@@ -1228,7 +1109,7 @@ ol {
     background-color: #9f1f3b; }
 
 .btn-success {
-  background-color: #28B463;
+  background-color: #28b463;
   color: #ffffff; }
   .btn-success:hover {
     background-color: #3b7855; }
@@ -1240,7 +1121,7 @@ ol {
     background-color: #207ab6; }
 
 .btn-primary {
-  background-color: #7D62FF;
+  background-color: #7d62ff;
   color: #ffffff; }
   .btn-primary:hover {
     background-color: #6f57e1; }
@@ -1252,17 +1133,17 @@ ol {
     background-color: #0d0d0d; }
 
 .btn-light {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   color: #212121; }
   .btn-light:hover {
     background-color: #dadada; }
 
 .btn-outln-warning {
   background-color: transparent;
-  border: 1px solid #F7BB26;
-  color: #F7BB26; }
+  border: 1px solid #f7bb26;
+  color: #f7bb26; }
   .btn-outln-warning:hover {
-    background-color: #F7BB26;
+    background-color: #f7bb26;
     color: #ffffff; }
   .btn-outln-warning:active {
     -webkit-transform: scale(0.95);
@@ -1281,10 +1162,10 @@ ol {
 
 .btn-outln-success {
   background-color: transparent;
-  border: 1px solid #28B463;
-  color: #28B463; }
+  border: 1px solid #28b463;
+  color: #28b463; }
   .btn-outln-success:hover {
-    background-color: #28B463;
+    background-color: #28b463;
     color: #ffffff; }
   .btn-outln-success:active {
     -webkit-transform: scale(0.95);
@@ -1303,10 +1184,10 @@ ol {
 
 .btn-outln-primary {
   background-color: transparent;
-  border: 1px solid #7D62FF;
-  color: #7D62FF; }
+  border: 1px solid #7d62ff;
+  color: #7d62ff; }
   .btn-outln-primary:hover {
-    background-color: #7D62FF;
+    background-color: #7d62ff;
     color: #ffffff; }
   .btn-outln-primary:active {
     -webkit-transform: scale(0.95);
@@ -1325,10 +1206,10 @@ ol {
 
 .btn-outln-light {
   background-color: transparent;
-  border: 1px solid #EEEEEE;
-  color: #EEEEEE; }
+  border: 1px solid #eeeeee;
+  color: #eeeeee; }
   .btn-outln-light:hover {
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     color: #212121; }
   .btn-outln-light:active {
     -webkit-transform: scale(0.95);
@@ -1351,7 +1232,7 @@ ol {
   width: 100%; }
   .form-input:focus {
     outline: none;
-    border: 1px solid #7D62FF; }
+    border: 1px solid #7d62ff; }
 
 /* ALINEACION */
 .center {
