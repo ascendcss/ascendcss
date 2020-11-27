@@ -1,0 +1,65 @@
+/* GENERAL GRID STYLES */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1;
+}
+
+@for $i from 1 through 20 {
+  .col-#{$i*5}{
+    flex: #{($i*5)+"%"};
+    flex-basis: #{($i*5)+"%"};
+    max-width: #{($i*5)+"%"};
+  }
+}
+@include md {
+  @for $i from 1 through 20 {
+    .md\:col-#{$i*5}{
+      flex: #{($i*5)+"%"};
+      flex-basis: #{($i*5)+"%"};
+      max-width: #{($i*5)+"%"};
+    }
+  }
+}
+@include lg{
+  @for $i from 1 through 20 {
+    .lg\:col-#{$i*5}{
+      flex: #{($i*5)+"%"};
+      flex-basis: #{($i*5)+"%"};
+      max-width: #{($i*5)+"%"};
+    }
+  }
+}
+@include xl{
+  @for $i from 1 through 20 {
+    .xl\:col-#{$i*5}{
+      flex: #{($i*5)+"%"};
+      flex-basis: #{($i*5)+"%"};
+      max-width: #{($i*5)+"%"};
+    }
+  }
+}
+
+/* GAP CONTENT */
+@for $i from 1 through 20 {
+  .rows-gutter-#{$i}{
+    > div{
+      padding: #{($i * 0.1)/2}rem 0;
+      box-sizing: border-box;
+    }
+  }
+  .cols-gutter-#{$i}{
+    > div{
+      padding: 0 #{($i * 0.1)/2}rem;
+      box-sizing: border-box;
+    }
+  }
+  .gutter-#{$i}{
+    > div{
+      padding: #{($i * 0.1)/2}rem;
+      box-sizing: border-box;
+    }
+  }
+}

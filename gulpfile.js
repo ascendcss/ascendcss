@@ -14,7 +14,7 @@ gulp.task('sass', () => {
             browsers: ['last 2 versions']
         }))
         .pipe(gulp.dest('./_site/css/'))
-        .pipe(gulp.dest('./src/css/'))
+        .pipe(gulp.dest('./dist/css/'))
     gulp.src('./src/scss/ascend.scss')
         .pipe(sass({
             outputStyle: 'compressed'
@@ -23,7 +23,7 @@ gulp.task('sass', () => {
             browsers: ['last 2 versions']
         }))
         .pipe(concat('ascend.min.css'))
-        .pipe(gulp.dest('./src/css/'))
+        .pipe(gulp.dest('./dist/css/'))
         .pipe(gulp.dest('./_site/css/'));
     gulp.src('./src/scss/web-main.scss')
         .pipe(sass({

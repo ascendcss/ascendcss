@@ -8,27 +8,67 @@ espaciado_active: x-active
 {% markdown %}
 # Espaciado
 
-Nomenclatura: `breakpoint:clase`
+Nomenclatura: 
+Clase => `breakpoint:clase`<br>
+Variable CSS: => `-breakpoint-nombreDeLaClase: ---;`<br>
 
-> Cabe destacar que para dispositivos moviles pequeños se debe utilizar la clase por defecto, sin el breakpoint por delante.
+**EL VALOR POR DEFECTO EN EL CASO QUE NO DEFINA LA VARIABLE DE CSS ES:** `0.5rem`
 
-| Margenes | Clase |
-|---|---|
-| x/y | `mg-numero` |
-| x | `mx-numero` |
-| y | `my-numero` |
-| Superior | `mt-numero` |
-| Inferior | `mb-numero` |
-| Derecha | `mr-numero` |
-| Izquierda | `ml-numero` |
+> Cabe destacar que para dispositivos moviles pequeños se debe definir solo la clase, sin el breakpoint.
 
-| Paddings | Clase |
-|---|---|
-| x/y | `pd-numero` |
-| x | `px-numero` |
-| y | `py-numero` |
-| Superior | `pt-numero` |
-| Inferior | `pb-numero` |
-| Derecha | `pr-numero` |
-| Izquierda | `pl-numero` |
+| Margenes | Clase | Variable |
+|---|---|---|
+| x/y | `mg` | `--mg: 0.5rem` |
+| x | `mx` | `--mx: 0.5rem` |
+| y | `my` | `--my: 0.5rem` |
+| Superior | `mt` | `--mt: 0.5rem` |
+| Inferior | `mb` | `--mb: 0.5rem` |
+| Derecha | `mr` | `--mr: 0.5rem` |
+| Izquierda | `ml` | `--ml: 0.5rem` |
+
+| Paddings | Clase | Variable |
+|---|---|---|
+| x/y | `pd` | `--pd: 0.5rem` |
+| x | `px` | `--px: 0.5rem` |
+| y | `py` | `--py: 0.5rem` |
+| Superior | `pt` | `--pt: 0.5rem` |
+| Inferior | `pb` | `--pb: 0.5rem` |
+| Derecha | `pr` | `--pr: 0.5rem` |
+| Izquierda | `pl` | `--pl: 0.5rem` |
+
+## Ejemplo
+
+En el siguiente ejemplo estaremos creando dos contenedores donde el segundo tendra un `margin-top` de `2rem` en un dispositivo mediano y `0.8rem` en dispositivos pequeños.
+
+```html
+<div>
+    Contenedor 1
+</div>
+<div class="mt md:mt" style="--mt: 0.8rem; --md-mt: 2rem">
+    Contenedor 2
+</div>
+```
+Tambien puede definir las variables en una hoja de estilos seleccionando el elmento a travez de un ID o varios con una clase.
+```html
+<div>
+    Contenedor 1
+</div>
+<div class="mt md:mt" id="item">
+    Contenedor 2
+</div>
+```
+```css
+#item {
+    --mt: 0.8rem;
+    --md-mt: 2rem
+}
+```
+**Resultado**
+<div>
+    <p>Contenedor 1</p>
+</div>
+<div class="mt md:mt" style="--mt: 0.8rem; --md-mt: 2rem">
+    <p>Contenedor 2</p>
+</div>
+<br>
 {% endmarkdown %}
