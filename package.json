@@ -1,10 +1,10 @@
 {
   "name": "ascendcss",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ascend es una librería de CSS que te permitirá crear layouts para tu sitio web de la forma mas rápida y amigable posible.",
   "main": "dist/index.js",
   "scripts": {
-    "sass": "gulp watch:sass",
+    "sass": "gulp watch",
     "dev": "eleventy --serve",
     "build": "babel src --out-dir dist"
   },

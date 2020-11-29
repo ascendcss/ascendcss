@@ -1,0 +1,104 @@
+:root {
+    --navbar-bg: #{$primary-color};
+    --navbar-color: #ffffff;
+    --navbar-hg: 60px;
+    --navbar-content-cols: 10fr 2fr;
+}
+.navbar {
+    background-color: var(--navbar-bg);
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    grid-template-rows: var(--navbar-hg);
+    height: var(--navbar-hg);
+    color: var(--navbar-color);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.2);
+}
+.navbar-brand {
+    color: var(--navbar-color);
+    font-weight: 600;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    text-decoration: none;
+}
+.navbar-content {
+    position: relative;
+    z-index: 999999 ;
+    display: none;
+    padding: 10px 10px 20px 10px;
+    background-color: var(--navbar-bg);
+    width: 100%;
+    transition: 0.3s;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+}
+.navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: var(--navbar-color);
+    a {
+        color: var(--navbar-color);
+        margin: 10px 0;
+    }
+    a:last-child{
+        margin-bottom: 30px;
+    }
+}
+.navbar-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--navbar-color);
+    a {
+        color: var(--navbar-color);
+    }
+}
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: var(--navbar-color);
+    padding-right: 15px;
+}
+.navbar-show {
+    display: block;
+}
+.active-link {
+    font-weight: 600;
+}
+@include lg {
+    .navbar {
+        grid-template-columns: 2fr 10fr;
+    }
+    .navbar-content {
+        position: relative;
+        display: grid;
+        padding: 0;
+        grid-template-rows: 1fr;
+        grid-template-columns: var(--navbar-content-cols);
+        height: 100%;
+        box-shadow: none;
+    }
+    .navbar-links {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        a {
+            margin: 0 0.8rem;
+        }
+        a:last-child{
+            margin: 0 0.8rem;
+        }
+    }
+    .navbar-toggler {
+        display: none;
+    }
+    .navbar-right{
+        padding-right: 10px;
+    }
+}

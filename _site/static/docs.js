@@ -96,22 +96,9 @@ function xSideparOpen() {
     document.getElementById("x-sidebar").classList.toggle("block");
     document.getElementById("sidebar-btn").classList.toggle("hidden");
 }
-function openNav() {
-    var x_nav = document.getElementById("nav");
-    var x_navbar = document.getElementById("nav-right");
-    var x_check = (x_nav.classList.contains("nav-show")) && (x_navbar.classList.contains("nav-right-show"));
-    if (!x_check) {
-        x_nav.classList.remove("nav-hidden");
-        x_navbar.classList.remove("nav-hidden");
-    } else {
-        setTimeout(function () {
-            x_nav.classList.add("nav-hidden");
-            x_navbar.classList.add("nav-hidden");
-        }, 300)
-    }
-    document.getElementById("navbar").classList.toggle("navbar-show");
-    x_nav.classList.toggle("nav-show");
-    x_navbar.classList.toggle("nav-right-show");
+function openNav(id) {
+    var nav = document.getElementById(id);
+    nav.classList.toggle("navbar-show");
 }
 var heads = [];
 heads.push(...document.getElementsByTagName('H1'));

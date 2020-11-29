@@ -79,167 +79,6 @@ ol {
 .x-sidebar {
   padding: 15px;
 }
-
-/*Nav*/
-.navbar {
-  transition: 0.5s;
-  position: fixed;
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-  z-index: 99999;
-  // Navbar
-  .navbar-btn {
-    display: none;
-    position: fixed;
-    right: 10px;
-    top: 16px;
-    outline: none;
-    border: none;
-    font-size: 25px;
-    background-color: #ffffff;
-  }
-  .navbar-grid {
-    display: grid;
-    grid-template-columns: 1fr 7fr 3fr;
-    grid-template-rows: 60px;
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      a {
-        text-decoration: none;
-        color: $primary-color;
-        font-weight: 800;
-        font-size: 1.3rem;
-      }
-      img {
-        width: 45px;
-        border-radius: 25%;
-      }
-    }
-    .nav {
-      .nav-item {
-        padding: 0px 10px;
-        text-decoration: none;
-        color: #000000;
-      }
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      .nav-right-item {
-        padding: 0px 10px;
-        text-decoration: none;
-        color: #000000;
-        i {
-          font-size: 1.3rem;
-        }
-      }
-    }
-    .active {
-      font-weight: 600;
-    }
-  }
-  // Responsive
-  @include small-only {
-    height: 60px;
-    .navbar-btn {
-      display: inline-block;
-    }
-    .navbar-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 60px 6fr 2fr;
-      height: 100%;
-      .navbar-brand {
-        justify-content: start;
-        padding-left: 1.2rem;
-      }
-      .nav {
-        padding-top: 20px;
-        text-align: center;
-        animation-name: nav-close;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        .nav-item {
-          display: block;
-          margin-bottom: 20px;
-        }
-      }
-      .nav-show {
-        display: block;
-        animation-name: nav-show;
-        animation-duration: 0.3s;
-      }
-      .nav-right {
-        animation-name: nav-close;
-        animation-duration: 0.2s;
-        animation-fill-mode: forwards;
-        flex-shrink: 0;
-        height: 100%;
-        justify-content: center;
-      }
-      .nav-right-show {
-        display: flex;
-        animation-name: nav-show;
-        animation-duration: 0.3s;
-      }
-    }
-  }
-  @include medium-only {
-    height: 60px;
-    .navbar-btn {
-      display: none;
-    }
-    .navbar-grid {
-      display: grid;
-      grid-template-columns: 1fr 5fr 5fr;
-      grid-template-rows: 60px;
-      .navbar-brand {
-        justify-content: center;
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        .nav-item {
-          padding: 0px 10px;
-        }
-      }
-      .nav-right {
-        justify-content: flex-end;
-        padding-right: 1.5rem;
-      }
-    }
-  }
-}
-.navbar-show {
-  transition: 0.3s;
-  height: 100%;
-}
-@keyframes nav-show {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-@keyframes nav-close {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-  }
-}
-
-.nav-hidden {
-  @include small-only {
-    display: none !important;
-  }
-}
 h1:hover .title-icon {
   display: inline;
 }
@@ -271,14 +110,14 @@ h2 .title-icon-ico {
   overflow: auto;
 }
 code {
-  color: #ff603f;
+  color: $primary-color;
   background: #f3f3f3;
   border-radius: 5px;
   padding: 0px 5px;
 }
-$code-backgroud: #f2f2f2;
-$code-primary-color: #905;
-$code-secondary-color: #07a;
+$code-backgroud: #272727;
+$code-primary-color: rgb(255, 28, 77);
+$code-secondary-color: rgb(109, 191, 226);
 pre {
   width: 100%;
   padding: 10px;
@@ -298,7 +137,7 @@ pre {
 
 .hljs,
 .hljs-subst {
-  color: $color-300;
+  color: #cecece;
   font-family: sans-serif;
 }
 
@@ -307,7 +146,7 @@ pre {
 }
 
 .hljs-tag {
-  color: $code-primary-color;
+  color: #cecece;
 }
 
 .hljs-attribute,
@@ -380,4 +219,8 @@ main {
   margin-top: auto;
   background-color: #7d62ff;
   color: #ffffff;
+}
+.featured {
+  background-color: $primary-color;
+  padding: 3rem 3rem;
 }

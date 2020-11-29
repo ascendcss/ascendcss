@@ -7,7 +7,7 @@
   border: none;
   border-radius: 0.2rem;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
   outline: none;
   text-decoration: none;
   font-size: 1rem;
@@ -28,7 +28,7 @@
     @extend .btn;
     background-color: $color;
     @if $name == light {
-      color: $dark-color;
+      color: $primary-color;
     } @else {
       color: #ffffff;
     }
@@ -46,7 +46,7 @@
     &:hover{
       background-color: $color;
       @if $name == light {
-        color: $dark-color;
+        color: $primary-color;
       } @else {
         color: #ffffff;
       }

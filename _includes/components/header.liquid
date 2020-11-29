@@ -1,35 +1,35 @@
-<div class="navbar" id="navbar">
-    <button class="navbar-btn" onclick="openNav()">
-        <i class="fas fa-bars"></i>
+<nav class="navbar">
+    <a href="/" class="navbar-brand">
+        <svg width="50" viewBox="0 0 340 203" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M163.949 2.99788L2.44282 189.767C-2.03854 194.95 1.64287 203 8.49411 203H60.8843C63.2075 203 65.4159 201.99 66.9356 200.233L163.949 88.0444C167.139 84.3548 172.861 84.3547 176.051 88.0444L273.064 200.233C274.584 201.99 276.793 203 279.116 203H331.506C338.357 203 342.039 194.95 337.557 189.767L176.051 2.99787C172.861 -0.691781 167.139 -0.691764 163.949 2.99788Z"
+                stroke="white" />
+            <path
+                d="M163.949 153.835L132.877 189.767C128.396 194.95 132.077 203 138.928 203H201.072C207.923 203 211.604 194.95 207.123 189.767L176.051 153.835C172.861 150.145 167.139 150.145 163.949 153.835Z"
+                stroke="white" />
+        </svg>
+    </a>
+    <button class="navbar-toggler" id="toggler" onclick="openNav('navbar-c')">
+        <i class="fa fa-bars"></i>
     </button>
-    <div class="navbar-grid">
-        <div class="navbar-brand">
-            <a href="{{main.baseurl}}/">
-                <svg width="55" viewBox="0 0 340 203" fill="#7D62FF" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M163.949 2.99788L2.44282 189.767C-2.03854 194.95 1.64287 203 8.49411 203H60.8843C63.2075 203 65.4159 201.99 66.9356 200.233L163.949 88.0444C167.139 84.3548 172.861 84.3547 176.051 88.0444L273.064 200.233C274.584 201.99 276.793 203 279.116 203H331.506C338.357 203 342.039 194.95 337.557 189.767L176.051 2.99787C172.861 -0.691781 167.139 -0.691764 163.949 2.99788Z"
-                        stroke="white" />
-                    <path
-                        d="M163.949 153.835L132.877 189.767C128.396 194.95 132.077 203 138.928 203H201.072C207.923 203 211.604 194.95 207.123 189.767L176.051 153.835C172.861 150.145 167.139 150.145 163.949 153.835Z"
-                        stroke="white" />
-                </svg>
-            </a>
-        </div>
-        <div class="nav nav-hidden" id="nav">
-            <a class="nav-item {% if name == "Inicio" %}active{% endif %}" href="{{main.baseurl}}/">Inicio</a>
-            <a class="nav-item {% if name == "Documentacion" %}active{% endif %}"
+    <div class="navbar-content cols-2 lg:cols-1" id="navbar-c">
+        <div class="navbar-links">
+            <a class="nav-item {% if name == "Inicio" %}active-link{% endif %}" href="{{main.baseurl}}/">Inicio</a>
+            <a class="nav-item {% if name == "Documentacion" %}active-link{% endif %}"
                 href="{{main.baseurl}}/documentacion/instalacion/">Documentacion</a>
-            <a class="nav-item {% if name == "Descargar" %}active{% endif %}"
+            <a class="nav-item {% if name == "Descargar" %}active-link{% endif %}"
                 href="{{main.baseurl}}/descargar">Descargar</a>
         </div>
-        <div class="nav-right nav-hidden" id="nav-right">
+        <div class="navbar-right">
             <a href="https://github.com/ascendcss" target="_blank" class="nav-right-item">
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://twitter.com/ascendcss" target="_blank" class="nav-right-item">
                 <i class="fab fa-twitter"></i>
             </a>
+            <a href="https://ko-fi.com/S6S22PEF3" target="_blank" class="nav-right-item">
+                <i class="fas fa-heart"></i>
+            </a>
         </div>
     </div>
-</div>
-<div style="height: 60px;"></div>
+</nav>

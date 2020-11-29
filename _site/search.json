@@ -60,6 +60,11 @@
       "url":"/documentacion/instalacion/"
    },
    {
+      "title":"Navbar",
+      "category":"Componentes",
+      "url":"/documentacion/componentes/navbar/"
+   },
+   {
       "title":"Posición",
       "category":"Layout",
       "url":"/documentacion/layout/posicion/"

@@ -5,11 +5,16 @@
   padding: 8px 16px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 50px;
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 0.2rem;
   width: 100%;
+  &::placeholder{
+    opacity: 75%;
+  }
   &:focus{
+    background: #ffffff;
     outline: none;
-    border: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
   }
 }

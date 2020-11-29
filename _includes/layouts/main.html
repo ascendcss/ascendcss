@@ -1,7 +1,8 @@
 ---
 titlebase: "| Acend: Facil, gratis y open source."
 title: Somos Xpend
-description: "Ascend es una librería de CSS que te permitirá crear layouts para tu sitio web de la forma mas rápida y amigable posible"
+description: "Ascend es una librería de CSS que te permitirá crear layouts para tu sitio web de la forma mas rápida y
+amigable posible"
 ---
 
 
@@ -9,149 +10,145 @@ description: "Ascend es una librería de CSS que te permitirá crear layouts par
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} {{titlebase}}</title>
-  <meta property="og:title" content="{{ title }} {{titlebase}}" />
-  <meta property="og:locale" content="es_PE" />
-  <meta name="description" content="{{description}}" />
-  <meta property="og:description" content="{{description}}" />
-  <meta property="og:url" content="https://ascendcss.com/" />
-  <meta property="og:image" content="https://ascendcss.com/static/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@ascendcss" />
-  <meta name="twitter:creator" content="@ascendcss">
-  <meta name="twitter:card" content="summary">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }} {{titlebase}}</title>
+	<meta property="og:title" content="{{ title }} {{titlebase}}" />
+	<meta property="og:locale" content="es_PE" />
+	<meta name="description" content="{{description}}" />
+	<meta property="og:description" content="{{description}}" />
+	<meta property="og:url" content="https://ascendcss.com/" />
+	<meta property="og:image" content="https://ascendcss.com/static/img/logo.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@ascendcss" />
+	<meta name="twitter:creator" content="@ascendcss">
+	<meta name="twitter:card" content="summary">
 
-  <link rel="shortcut icon" href="{{main.baseurl}}/static/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="{{main.baseurl}}/css/ascend.min.css">
-  <link rel="stylesheet" href="{{main.baseurl}}/css/main.min.css">
-  <script src="https://kit.fontawesome.com/31ef3d53d0.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <script src="https://kit.fontawesome.com/31ef3d53d0.js" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-  <!-- <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script> -->
-  <script>
-    hljs.initHighlightingOnLoad();
-    // hljs.initLineNumbersOnLoad();
-  </script>
-  <style>
-    * {
-      font-family: 'Inter', sans-serif;
-    }
+	<link rel="shortcut icon" href="{{main.baseurl}}/static/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="{{main.baseurl}}/css/ascend.min.css">
+	<link rel="stylesheet" href="{{main.baseurl}}/css/main.min.css">
+	<script src="https://kit.fontawesome.com/31ef3d53d0.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/31ef3d53d0.js" crossorigin="anonymous"></script>
+	<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+	<style>
+		* {
+			font-family: 'Inter', sans-serif;
+		}
 
-    html {
-      scroll-behavior: smooth !important
-    }
+		html {
+			scroll-behavior: smooth !important
+		}
 
-    .x-col {
-      border-radius: 8px;
-      background-color: #FF603F;
-      text-align: center;
-      padding: 10px 0px;
-      color: #ffffff;
-    }
+		.x-col {
+			border-radius: 8px;
+			background-color: #FF603F;
+			text-align: center;
+			padding: 10px 0px;
+			color: #ffffff;
+		}
 
-    .x-col-3 {
-      border-radius: 8px;
-      background-color: #FF603F;
-      text-align: center;
-      color: #ffffff;
-    }
+		.x-col-3 {
+			border-radius: 8px;
+			background-color: #FF603F;
+			text-align: center;
+			color: #ffffff;
+		}
 
-    .col-style-2 {
-      background-color: #ffa695;
-      text-align: center;
-      padding: 10px 0px;
-      color: #ffffff;
-    }
+		.col-style-2 {
+			background-color: #ffa695;
+			text-align: center;
+			padding: 10px 0px;
+			color: #ffffff;
+		}
 
-    .col-style-4 {
-      padding: 10px 0px;
-      border-radius: 0px;
-      background-color: #ffa695;
-      text-align: center;
-      color: #ffffff;
-    }
+		.col-style-4 {
+			padding: 10px 0px;
+			border-radius: 0px;
+			background-color: #ffa695;
+			text-align: center;
+			color: #ffffff;
+		}
 
-    html,
-    body {
-      height: 100%;
-    }
+		html,
+		body {
+			height: 100%;
+		}
 
-    main {
-      min-height: 100%;
-      margin-bottom: -130px;
-    }
+		main {
+			min-height: 100%;
+			margin-bottom: -130px;
+		}
 
-    .footer {
-      background-color: #ffffff;
-      height: 130px;
-      -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-    }
+		.footer {
+			background-color: #ffffff;
+			height: 130px;
+		}
 
-    .padding-site-bottom {
-      height: 130px;
-    }
+		.padding-site-bottom {
+			height: 130px;
+		}
 
-    .featured {
-      background-color: #202020;
-      padding: 3rem 3rem;
-    } 
+		.color-white {
+			color: #ffffff;
+		}
 
-    .color-white {
-      color: #ffffff;
-    }
-    .x-active{
-      color: #7D62FF;
-      font-weight: 600;
-    }
-    .sidebar-link:hover{
-      text-decoration: underline;
-    }
-    .x-active:hover{
-      text-decoration: none;
-    }
-    .mt-5{
-      --mt: 3px;
-    }
-  </style>
+		.x-active {
+			color: #7D62FF;
+			font-weight: 600;
+		}
+
+		.sidebar-link:hover {
+			text-decoration: underline;
+		}
+
+		.x-active:hover {
+			text-decoration: none;
+		}
+
+		.mt-5 {
+			--mt: 3px;
+		}
+	</style>
 </head>
 
 <body style="display: none;" id="ascendapp">
-  <main>
-    {% include components/header %}
-    {{ content | safe }}
-    <div class="padding-site-bottom"></div>
-  </main>
-  <footer class="footer center">
-    <div>
-      <div class="container">
-        <p class="text-center" style="margin: 0;">Diseñado y construido por el equipo de <a
-            href="https://xpendmusic.com/">Xpend Music</a>.<br>
-          <strong>MIT License</strong> - <a href="https://github.com/ascendcss/ascendcss" target="_blank">Respositorio en
-            GitHub</a>
-        </p>
-        <div class="center mt-5">
-          <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
-          <script
-            type='text/javascript'>kofiwidget2.init('Donaciones', '#7d62ff', 'S6S22PEF3'); kofiwidget2.draw();</script>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="{{main.baseurl}}/js/ascend.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
-  <script src="{{main.baseurl}}/static/docs.js"></script>
-  <script>
-    ascendGrid().then(res => {
-      console.log(res);
-      document.getElementById("ascendapp").style.display = "block";
-    });
-  </script>
+	<main>
+		{% include components/header %}
+		{{ content | safe }}
+		<div class="padding-site-bottom"></div>
+	</main>
+	<footer class="footer center">
+		<div>
+			<div class="container">
+				<p class="text-center" style="margin: 0;">Diseñado y construido por el equipo de <a
+						href="https://xpend.co/">Xpend</a>.<br>
+					<strong>MIT License</strong> - <a href="https://github.com/ascendcss/ascendcss"
+						target="_blank">Respositorio
+						en
+						GitHub</a>
+				</p>
+				<div class="center mt-5">
+					<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
+					<script
+						type='text/javascript'>kofiwidget2.init('Donaciones', '#7d62ff', 'S6S22PEF3'); kofiwidget2.draw();</script>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="{{main.baseurl}}/js/ascend.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+	<script src="{{main.baseurl}}/static/docs.js"></script>
+	<script>
+		ascendGrid().then(res => {
+			console.log(res);
+			document.getElementById("ascendapp").style.display = "block";
+		});
+	</script>
 </body>
 
 </html>
