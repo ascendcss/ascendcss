@@ -1,14 +1,8 @@
 .container {
-  @include xs {
-    padding: 5px 15px;
-  }
-  @include sm {
-    padding: 10px 15px;
-  }
+  padding-left: 1rem;
+  padding-right: 1rem;
   @include md {
-    padding: 5px 60px;
-  }
-  @include lg {
-    padding: 5px 60px;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }

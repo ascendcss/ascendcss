@@ -1,8 +1,8 @@
-:root{
-  --md-radius: 1rem;
+:root {
+  --btn-color: #ffffff;
 }
-.btn{
-  padding: 10px 12px;
+.btn {
+  padding: 0.5rem 0.7rem;
   margin: 8px 0;
   border: none;
   border-radius: 0.2rem;
@@ -11,52 +11,50 @@
   outline: none;
   text-decoration: none;
   font-size: 1rem;
-  &:active{
-    transform: scale(0.95);
+  &:active {
+    transform: scale(0.98);
   }
 }
-.btn-sm{
-  padding: 5px 9px;
+.btn-sm {
+  padding: 0.2rem 0.4rem;
   font-size: 0.75rem;
 }
-.btn-lg{
-  padding: 11px 19px;
-  font-size: 1.30rem;
+.btn-lg {
+  padding: 0.7rem 1.4rem;
+  font-size: 1.3rem;
 }
-@each $name, $color in $colors{
-  .btn-#{$name}{
-    @extend .btn;
+@each $name, $color in $colors {
+  .btn-#{$name} {
     background-color: $color;
+    border: 1px solid $color;
     @if $name == light {
-      color: $primary-color;
-    } @else {
-      color: #ffffff;
+      --btn-color: $dark-color;
     }
-    &:hover{
-      background-color: desaturate(darken($color, 8%), 30%);
+    color: var(--btn-color);
+    &:hover {
+      background-color: darken($color, 6%);
+      border: 1px solid darken($color, 6%);
     }
   }
 }
-@each $name, $color in $colors{
-  .btn-outln-#{$name}{
-    @extend .btn;
+@each $name, $color in $colors {
+  .btn-outln-#{$name} {
     background-color: transparent;
     border: 1px solid $color;
     color: $color;
-    &:hover{
-      background-color: $color;
-      @if $name == light {
-        color: $primary-color;
-      } @else {
-        color: #ffffff;
-      }
+    @if $name == light {
+      --btn-color: $dark-color;
     }
-    &:active{
-      transform: scale(0.95);
+    &:hover {
+      background-color: $color;
+      color: var(--btn-color);
+    }
+    &:active {
+      transform: scale(0.98);
     }
   }
 }
-.btn-link{
+.btn-link {
   text-decoration: none;
   border: none;
 }

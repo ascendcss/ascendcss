@@ -38,12 +38,12 @@
 }
 @for $i from 1 through 6 {
   h#{$i} {
-    color: $color-300;
+    color: $color;
   }
 }
 p {
   margin: 10px 0px;
-  color: $color-200;
+  color: $color-100;
 }
 a {
   text-decoration: none;
@@ -63,18 +63,18 @@ table > thead > tr > th {
   padding: 0.7rem;
   vertical-align: top;
   border: 1px solid #e6e9eb;
-  color: $color-300;
+  color: $color-200;
 }
 blockquote {
   background: #f0f0f0;
   border-left: 0.5rem solid $primary-color;
   margin: 1.3rem 10px;
   padding: 0.3rem 10px;
-  color: $color-300;
+  color: $color-200;
 }
 ul,
 ol {
-  color: $color-300;
+  color: $color-200;
 }
 .x-sidebar {
   padding: 15px;
@@ -183,7 +183,7 @@ pre {
 .hljs-symbol,
 .hljs-template-variable,
 .hljs-variable {
-  color: #bc6060;
+  color: $code-primary-color;
 }
 
 .hljs-literal {

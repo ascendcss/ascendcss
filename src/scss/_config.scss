@@ -4,11 +4,12 @@ $secondary-color: #ffff;
 $primary-bg-color: #ffffff;
 $secondary-bg-color: #ffffff;
 
-$color-500: #17202a;
-$color-400: #1b2631;
-$color-300: #2d3237;
-$color-200: #35393d;
-$color-100: #5c5c5c;
+$color: #28292b;
+$color-100: lighten($color, 10%);
+$color-200: lighten($color, 20%);
+$color-300: lighten($color, 30%);
+$color-400: lighten($color, 40%);
+$color-500: lighten($color, 50%);
 
 $warning-color: #f7bb26;
 $danger-color: rgb(228, 3, 52);
@@ -17,8 +18,6 @@ $info-color: #0099ff;
 $dark-color: #212121;
 $light-color: #eeeeee;
 
-$screen-xs: 0em;
-$screen-sm: 0em;
 $screen-md: 40em;
 $screen-lg: 64em;
 $screen-xl: 90em;

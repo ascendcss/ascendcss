@@ -1,6 +1,6 @@
 {
   "name": "ascendcss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ascend es una librería de CSS que te permitirá crear layouts para tu sitio web de la forma mas rápida y amigable posible.",
   "main": "dist/index.js",
   "scripts": {

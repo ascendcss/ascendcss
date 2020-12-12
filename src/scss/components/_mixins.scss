@@ -1,16 +1,4 @@
 // MIXIS
-
-@mixin xs {
-  @media only screen and (min-width: $screen-xs) {
-    @content;
-  }
-}
-
-@mixin sm {
-  @media only screen and (min-width: $screen-sm) {
-    @content;
-  }
-}
  
 @mixin md {
   @media only screen and (min-width: $screen-md) {

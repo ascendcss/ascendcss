@@ -1,0 +1,31 @@
+@import "./components/mixins";
+
+/* RESET */
+@import "./components/base";
+
+/* Layout */
+@import "./components/layout";
+
+/* NAV */
+@import "./components/navbar";
+
+/* BOTONES */
+@import "./components/buttons";
+
+/* Otros */
+@import "./components/others";
+
+/* Contenedores */
+@import "./components/container";
+
+/* FORMULARIO */
+@import "./components/form";
+
+/* ALINEACION */
+@import "./components/alignment";
+
+/* GRID */
+@import "./components/grid";
+
+/* FLEX GRID */
+@import "./components/flexbox-grid";

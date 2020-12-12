@@ -30,11 +30,6 @@
       "url":"/documentacion/grid/css-grid-con-js/"
    },
    {
-      "title":"Descargar",
-      "category":null,
-      "url":"/descargar/"
-   },
-   {
       "title":"Display",
       "category":"Layout",
       "url":"/documentacion/layout/display/"
