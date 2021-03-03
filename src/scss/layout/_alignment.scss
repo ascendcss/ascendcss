@@ -1,0 +1,38 @@
+@mixin center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@mixin center-x {
+	display: flex;
+	justify-content: center;
+}
+@mixin center-y {
+	display: flex;
+	align-items: center;
+}
+@mixin top {
+	display: flex;
+	align-items: flex-start;
+}
+@mixin bottom {
+	display: flex;
+	align-items: flex-end;
+}
+@mixin left {
+	display: flex;
+	justify-content: flex-start;
+}
+@mixin right {
+	display: flex;
+	justify-content: flex-end;
+}
+@mixin text-center {
+	text-align: center;
+}
+@mixin text-left {
+	text-align: left;
+}
+@mixin text-right {
+	text-align: right;
+}

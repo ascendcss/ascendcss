@@ -1,0 +1,81 @@
+@import "../utilities/functions/check-and-split";
+
+@function rpt($number, $value) {
+    $values: "";
+    @for $i from 1 through $number {
+        @if $i == 1 {
+            $values: $values + $value;
+        } @else {
+            $values: $values + " " + $value;
+        }
+    }
+    @return unquote($values);
+}
+
+@function create-grid-values($values) {
+    $values: $values + "";
+    $values: check-and-split($values);
+    $r: "";
+    @each $value in $values {
+        $value: $value + "fr";
+        $r: $r + " " + $value;
+    }
+    @return unquote($r);
+}
+
+@mixin grid($col: null, $row: null) {
+    display: grid;
+    @if $col != null {
+        grid-template-columns: create-grid-values($col);
+    }
+    @if $row != null {
+        grid-template-rows: create-grid-values($row);
+    }
+}
+
+@mixin ascendcss-nth($number, $cols, $tagName, $template) {
+    @if $number != null and $cols != null {
+        #{$tagName}:nth-child(#{$number}) {
+            #{$template}: $cols;
+        }
+    }
+}
+
+@mixin ascendcss-span-nth($number, $cols, $tagName, $template) {
+    @if $number != null and $cols != null {
+        #{$tagName}:nth-child(#{$number}) {
+            #{$template}: span $cols;
+        }
+    }
+}
+
+@mixin cols($cols) {
+    grid-column-end: span $cols;
+}
+
+@mixin cols-nth($number: null, $cols: null, $tagName: div) {
+    @include ascendcss-span-nth($number, $cols, $tagName, grid-column-end);
+}
+
+@mixin cols-st($col-st) {
+    grid-column-start: $col-st;
+}
+@mixin col-st-nth($number: null, $col-st: null, $tagName: div) {
+    @include ascendcss-nth($number, $col-st, $tagName, grid-column-start);
+}
+
+@mixin rows($rows) {
+    grid-row-end: span $rows;
+}
+
+@mixin rows-nth($number: null, $cols: null, $tagName: div) {
+    @include ascendcss-span-nth($number, $cols, $tagName, grid-row-end);
+}
+
+@mixin cols-st($row-st) {
+    grid-row-start: $row-st;
+}
+
+@mixin row-st-nth($number: null, $col-st: null, $tagName: div) {
+    @include ascendcss-nth($number, $col-st, $tagName, grid-row-start);
+}

@@ -1,32 +1,15 @@
-@import "./config";
-@import "./components/mixins";
+// @import "./config";
 
-/* RESET */
-@import "./components/base";
+// Importar mixins
+/// @author EDGrid >-> https://github.com/escueladigital/EDgrid
+@import "./utilities/mixins/main";
 
-/* Layout */
-@import "./components/layout";
+// Importar layout
+@import "./layout/grid";
+@import "./layout/alignment";
 
-/* NAV */
-@import "./components/navbar";
-
-/* BOTONES */
-@import "./components/buttons";
-
-/* Otros */
-@import "./components/others";
-
-/* Contenedores */
+// Importar componentes
 @import "./components/container";
-
-/* FORMULARIO */
+@import "./components/buttons";
 @import "./components/form";
-
-/* ALINEACION */
-@import "./components/alignment";
-
-/* GRID */
-@import "./components/grid";
-
-/* FLEX GRID */
-@import "./components/flexbox-grid";
+@import "./components/navbar";

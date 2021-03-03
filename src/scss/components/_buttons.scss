@@ -1,60 +1,25 @@
-:root {
-  --btn-color: #ffffff;
+@mixin acss_main-btn {
+	padding: 0.5rem 0.7rem;
+	margin: 8px 0;
+	border: none;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	transition: 0.1s;
+	outline: none;
+	text-decoration: none;
+	font-size: 1rem;
+	&:active {
+		transform: scale(0.98);
+	}
 }
-.btn {
-  padding: 0.5rem 0.7rem;
-  margin: 8px 0;
-  border: none;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  transition: 0.1s;
-  outline: none;
-  text-decoration: none;
-  font-size: 1rem;
-  &:active {
-    transform: scale(0.98);
-  }
-}
-.btn-sm {
-  padding: 0.2rem 0.4rem;
-  font-size: 0.75rem;
-}
-.btn-lg {
-  padding: 0.7rem 1.4rem;
-  font-size: 1.3rem;
-}
-@each $name, $color in $colors {
-  .btn-#{$name} {
-    background-color: $color;
-    border: 1px solid $color;
-    @if $name == light {
-      --btn-color: $dark-color;
-    }
-    color: var(--btn-color);
-    &:hover {
-      background-color: darken($color, 6%);
-      border: 1px solid darken($color, 6%);
-    }
-  }
-}
-@each $name, $color in $colors {
-  .btn-outln-#{$name} {
-    background-color: transparent;
-    border: 1px solid $color;
-    color: $color;
-    @if $name == light {
-      --btn-color: $dark-color;
-    }
-    &:hover {
-      background-color: $color;
-      color: var(--btn-color);
-    }
-    &:active {
-      transform: scale(0.98);
-    }
-  }
-}
-.btn-link {
-  text-decoration: none;
-  border: none;
+
+@mixin btn($bg: #000, $color: #fff) {
+	@include acss_main-btn;
+	background-color: $bg;
+	border: 1px solid $bg;
+	color: $color;
+	&:hover {
+		background-color: darken($bg, 6%);
+		border: 1px solid darken($bg, 6%);
+	}
 }

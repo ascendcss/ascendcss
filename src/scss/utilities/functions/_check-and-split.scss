@@ -1,0 +1,8 @@
+@import "./str-split";
+@function check-and-split($values) {
+    @if str-slice($values, 1, 1) == " " {
+        $values: str-slice($values, 2, -1);
+    }
+    $values: str-split($values, " ");
+    @return $values
+}
