@@ -1,0 +1,15 @@
+//  Repetir un valor x veces
+/// @param {number} $number - Numero de veces que se repetira
+/// @param {string} $value - variable que se repetira
+/// @return {string}.
+@function rpt($number, $value) {
+    $values: "";
+    @for $i from 1 through $number {
+        @if $i == 1 {
+            $values: $values + $value;
+        } @else {
+            $values: $values + " " + $value;
+        }
+    }
+    @return unquote($values);
+}

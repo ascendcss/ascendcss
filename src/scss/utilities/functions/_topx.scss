@@ -1,0 +1,17 @@
+/// Convierte un valor en em o rem a px
+/// @param   {number} $value - var a convertir a pixeles.
+@function topx($value) {
+    @if type-of($value) == number {
+        @if unit($value) == "em" {
+            @return ($value / 1em) * 16px;
+        } @else if unit($value) == "rem" {
+            @return ($value / 1rem) * 16px;
+        } @else if unit($value) == "px" {
+            @return $value;
+        } @else {
+            @error "La funcion toPx() solo acepta numeros en em o rem o px";
+        }
+    } @else {
+        @error "La funcion toPx() solo acepta numeros en em o rem";
+    }
+}

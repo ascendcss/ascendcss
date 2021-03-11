@@ -1,33 +1,45 @@
+@import "../utilities/functions/rpt";
 @import "../utilities/functions/check-and-split";
+@import "../utilities/functions/number";
 
-@function rpt($number, $value) {
-    $values: "";
-    @for $i from 1 through $number {
-        @if $i == 1 {
-            $values: $values + $value;
-        } @else {
-            $values: $values + " " + $value;
-        }
-    }
-    @return unquote($values);
-}
-
+//  Generar valores de filas o columnas
+/// @param {string} $values -  datos par crear el numero de columnas o filas
+/// @return {string} - CSS Value;
 @function create-grid-values($values) {
-    $values: $values + "";
-    $values: check-and-split($values);
+    // convertir $values en una lista para iterar
+    $values: check-and-split($values + "");
     $r: "";
+    $n: 1;
     @each $value in $values {
+        @if type-of(number($value)) != 'number' {
+            @error "'#{$values}' no son numeros";
+        }
         $value: $value + "fr";
-        $r: $r + " " + $value;
+        @if $n == 1 {
+            $r: $value;
+        } @else {
+            $r: "#{$r} #{$value}";
+        }
+        $n: $n + 1;
     }
     @return unquote($r);
 }
 
+/// Generar grid
+/// @param {number} $col - Columnas
+/// @param {number} $row - Filas
 @mixin grid($col: null, $row: null) {
+    // Revisar si se definio una variable
+    @if $col == null and $row == null {
+        @error "No se han definido las variables -> grid($col, $row)";
+    }
     display: grid;
+
+    // Si existe la variable de $col regresar declaracion
     @if $col != null {
         grid-template-columns: create-grid-values($col);
     }
+    // Si existe la variable de $row regresar declaracion
     @if $row != null {
         grid-template-rows: create-grid-values($row);
     }

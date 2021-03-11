@@ -1,0 +1,15 @@
+/// Convierte un valor en em o rem a px
+/// @param   {number} value - var a convertir a pixeles.
+topx(value) {
+    if typeof(value) == 'unit' {
+        if unit(value) == 'em' {
+            return unit((value / 1em) * 16, 'px');
+        } else if unit(value) == 'rem' {
+            return unit((value / 1rem) * 16, 'px');
+        } else if unit(value) == 'px' {
+            return value;
+        }
+    } else {
+        error('La funcion topx() solo acepta numeros en em o rem o px');
+    }
+}

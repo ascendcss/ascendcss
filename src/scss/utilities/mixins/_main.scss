@@ -1,8 +1,6 @@
-/// @author EDGrid
-/// https://github.com/escueladigital/EDgrid
+@import '../functions/topx';
 
 /// Devuelve true si el breakpoint es parte del core
-
 @function isCoreBreakpoint($bp) {
     @if map-get($breakpoints, $bp) {
         @return true;
@@ -26,24 +24,6 @@
 
 @function getBp($bp) {
     @return map-get($breakpoints, $bp);
-}
-
-/// Convierte un valor en em o rem a px
-/// @param   {number} $value - var a convertir a pixeles.
-@function toPx($value) {
-    @if type-of($value) == number {
-        @if unit($value) == "em" {
-            @return ($value / 1em) * 16px;
-        } @else if unit($value) == "rem" {
-            @return ($value / 1rem) * 16px;
-        } @else if unit($value) == "px" {
-            @return $value;
-        } @else {
-            @error "La funcion toPx() solo acepta numeros en em o rem o px";
-        }
-    } @else {
-        @error "La funcion toPx() solo acepta numeros en em o rem";
-    }
 }
 
 /// From (mayor que $bp)
@@ -83,13 +63,6 @@
 
 /// To (es menor que $to)
 /// @param   {number} $to - breakpoint
-/// @example scss
-///     .elemento {
-///       width: 50%;
-///       @include to(m) {
-///         width: 30%;
-///       }
-///     }
 @mixin to($to) {
     // Si es un breakpoint del core
     @if isCoreBreakpoint($to) {
@@ -103,7 +76,7 @@
     }
     // Si es un breakpoint válido (px, em, rem)
     @else if isValidBreakpoint($to) {
-        @media screen and (max-width: toPx($to)) {
+        @media screen and (max-width: topx($to)) {
             @content;
         }
     }
@@ -116,13 +89,6 @@
 /// from-to la regla se ejecuta entre ambos breakpoints.
 /// @param   {number} $from - breakpoint desde que medida se iniciara la regla.
 /// @param   {number} $to - breakpoint hasta que medida se ejecutara la regla.
-/// @example scss
-///     .elemento {
-///       background-color: cyan;
-///       @include from-to(s, l) {
-///         background-color: darken(cyan, .8);
-///       }
-///     }
 @mixin from-to($from, $to) {
     // Si ambos son breakpoints del core
     @if isCoreBreakpoint($from) and isCoreBreakpoint($to) {
@@ -138,8 +104,8 @@
     // Si solo $from es breakpoint del core
     @else if isCoreBreakpoint($from) and not isCoreBreakpoint($to) {
         @if isValidBreakpoint($to) {
-            @if toPx($to) > toPx(getBp($from)) {
-                @media screen and (min-width: getBp($from)) and (max-width: toPx($to)) {
+            @if topx($to) > topx(getBp($from)) {
+                @media screen and (min-width: getBp($from)) and (max-width: topx($to)) {
                     @content;
                 }
             } @else {
@@ -153,7 +119,7 @@
     // Si solo $to es breakpoint del core
     @else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
         @if isValidBreakpoint($from) {
-            @if toPx(getBp($to)) > toPx($from) {
+            @if topx(getBp($to)) > topx($from) {
                 @media screen and (min-width: $from) and (max-width: getBp($to)) {
                     @content;
                 }
@@ -167,8 +133,8 @@
 
     // Si no son breakpoints del core pero son breakpoints válidos (px, em, rem)
     @else if isValidBreakpoint($from) and isValidBreakpoint($to) {
-        @if toPx($to) > toPx($from) {
-            @media screen and (min-width: $from) and (max-width: toPx($to)) {
+        @if topx($to) > topx($from) {
+            @media screen and (min-width: $from) and (max-width: topx($to)) {
                 @content;
             }
         } @else {

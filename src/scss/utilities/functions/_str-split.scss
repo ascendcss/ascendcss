@@ -1,3 +1,7 @@
+// Separar string y convertir en lista
+/// @param {string} $string - String a separar
+/// @param {string} $separator - Especifica el caracter a usar para la separación de la cadena. 
+/// @return {list};
 @function str-split($string, $separator) {
 	$split-arr: ();
 	$index: str-index($string, $separator);

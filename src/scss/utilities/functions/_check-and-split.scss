@@ -1,4 +1,7 @@
 @import "./str-split";
+// Verificar espacios y separar par devolver una lista
+/// @param {string} $values - String para convertir en lista
+/// @return {list};
 @function check-and-split($values) {
     @if str-slice($values, 1, 1) == " " {
         $values: str-slice($values, 2, -1);

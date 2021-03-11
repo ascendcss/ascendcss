@@ -1,0 +1,13 @@
+// Repetir un valor x veces
+// / @param {number} number - Numero de veces que se repetira
+// / @param {string} value - variable que se repetira
+// / @return {string}.
+rpt(number, value) {
+    values = '';
+
+    for x in 1 .. number {
+        values += x == 1 ? value : ' ' + value;
+    }
+
+    return unquote(values);
+}

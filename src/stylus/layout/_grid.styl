@@ -1,0 +1,39 @@
+@import "../utilities/functions/_rpt";
+@import "../utilities/functions/_check-and-split";
+
+// Generar valores de filas o columnas
+// / @param {string} values -  datos par crear el numero de columnas o filas
+// / @return {string} - CSS Value;
+create-grid-values(values) {
+    values = check-and-split('' + values);
+    result = '';
+
+    for value in values {
+        value = value + 'fr';
+        result += ' ' + value;
+    }
+
+    return unquote(result);
+}
+
+// / Generar grid
+// / @param {number} col - Columnas
+// / @param {number} row - Filas
+grid(col = false, row = false) {
+    // Revisar si se definio una variable
+    if (!col && !row) {
+        error('No se han definido las variables -> grid(col, row)');
+    }
+
+    display: grid;
+
+    // Si existe la variable de col regresar declaracion
+    if (col) {
+        grid-template-columns: create-grid-values(col);
+    }
+
+    // Si existe la variable de row regresar declaracion
+    if (row) {
+        grid-template-rows: create-grid-values(row);
+    }
+}

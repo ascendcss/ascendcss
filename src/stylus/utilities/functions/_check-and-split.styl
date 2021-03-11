@@ -1,0 +1,9 @@
+// Verificar espacios y separar par devolver una lista
+// / @param {string} values - String para convertir en lista
+// / @return {list};
+check-and-split(values) {
+    values = slice(values, 0, 1) == ' ' ? slice(values, 1) : values;
+    values = slice(values, -1) == ' ' ? slice(values, 0, -1) : values;
+    values = split(' ', values);
+    return values;
+}

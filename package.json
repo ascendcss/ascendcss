@@ -1,6 +1,6 @@
 {
 	"name": "ascendcss",
-	"version": "1.1.4",
+	"version": "1.2.0",
 	"description": "Ascendcss es una librería de SASS que te permitirá crear layouts para tu sitio web de la forma mas rápida y amigable posible.",
 	"main": "ascendcss.scss",
 	"dependencies": {},
@@ -9,10 +9,12 @@
 		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
 		"gulp-sass": "^4.1.0",
+		"gulp-stylus": "^2.7.0",
 		"node-sass": "^5.0.0"
 	},
 	"scripts": {
 		"dev": "gulp dev",
+		"test": "gulp test",
 		"bundle": "bundle-scss -m \"./src/scss/ascendcss.scss\" -d \"./dist/ascencss.bundle.scss\""
 	},
 	"keywords": [
@@ -31,5 +33,5 @@
 	"bugs": {
 		"url": "https://github.com/ascendcss/ascendcss/issues"
 	},
-	"homepage": "https://acendcss.com"
+	"homepage": "https://ascendcss.com"
 }
