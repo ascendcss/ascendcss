@@ -8,20 +8,21 @@ acss_main-btn() {
 	outline: none;
 	text-decoration: none;
 	font-size: 1rem;
-
 	&:active {
 		transform: scale(0.98);
 	}
 }
 
-btn(bg = #000, color = #fff) {
+btn($bg = #000, $color = #fff, $hover = false) {
 	acss_main-btn();
-	background-color: bg;
-	border: 1px solid bg;
-	color: color;
+	background-color: $bg;
+	border: 1px solid $bg;
+	color: $color;
 
-	&:hover {
-		background-color: darken(bg, 6%);
-		border: 1px solid darken(bg, 6%);
+	if $hover{
+		&:hover {
+			background-color: $hover;
+			border: 1px solid $hover;
+		}
 	}
 }

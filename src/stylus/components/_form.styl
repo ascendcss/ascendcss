@@ -1,17 +1,17 @@
-input(bg = #f2f2f2) {
+input($bg = #f2f2f2, $focus-bg = lighten($bg, 10%)) {
 	padding: 8px 16px;
 	margin: 8px 0;
 	display: inline-block;
-	background-color: bg;
-	border: 1px solid bg;
+	background-color: $bg;
+	border: 1px solid $bg;
 	border-radius: 0.2rem;
 	width: 100%;
 	&::placeholder {
 		opacity: 75%;
 	}
 	&:focus {
-		background-color: lighten(bg, 10%);
+		background-color: $focus-bg;
 		outline: none;
-		border-bottom: 1px solid primary_color;
+		border-bottom: 1px solid $primary-color;
 	}
 }

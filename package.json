@@ -1,7 +1,7 @@
 {
 	"name": "ascendcss",
-	"version": "1.2.0",
-	"description": "Ascendcss es una librería de SASS que te permitirá crear layouts para tu sitio web de la forma mas rápida y amigable posible.",
+	"version": "1.1.8",
+	"description": "Ascendcss is a Sass library that will help you create designs for your website in the fastest and easiest way.",
 	"main": "ascendcss.scss",
 	"dependencies": {},
 	"devDependencies": {

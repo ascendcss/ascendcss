@@ -24,9 +24,6 @@ grid(col = false, row = false) {
     if (!col && !row) {
         error('No se han definido las variables -> grid(col, row)');
     }
-
-    display: grid;
-
     // Si existe la variable de col regresar declaracion
     if (col) {
         grid-template-columns: create-grid-values(col);
@@ -35,5 +32,21 @@ grid(col = false, row = false) {
     // Si existe la variable de row regresar declaracion
     if (row) {
         grid-template-rows: create-grid-values(row);
+    }
+}
+
+col($col = false) {
+    if (!$col) {
+        error('No se han definido las variables -> col($col)');
+    } else {
+        grid-template-columns: create-grid-values($col);
+    }
+}
+
+row($row = false) {
+    if (!$row) {
+        error('No se han definido las variables -> row($row)');
+    } else {
+        grid-template-rows: create-grid-values($row);
     }
 }

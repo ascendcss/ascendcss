@@ -45,8 +45,8 @@ $breakpoints: (
 > EN EL CASO DE QUE NO QUIERA PERSONALIZAR LA LIBRERIA PUEDE IMPORTAR LA CONFIGURACION POR DEFECTO
 
 ```scss
-@import "~ascendcss/config"
-@import "~ascendcss/ascendcss"
+@import "~ascendcss/config";
+@import "~ascendcss/ascendcss";
 
 // opcional
 @import "~ascendcss/base";

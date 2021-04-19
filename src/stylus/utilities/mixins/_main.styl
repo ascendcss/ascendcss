@@ -1,4 +1,9 @@
 @import '../functions/_topx';
+
+if typeof(breakpoints) != 'object' {
+    breakpoints = $breakpoints;
+}
+
 /// Devuelve true si el breakpoint es parte del core
 isCoreBreakpoint(bp) {
     return bp = breakpoints[bp] ? true : false;
@@ -15,7 +20,7 @@ isValidBreakpoint(bp) {
 }
 
 /// From (mayor que $bp)
-/// @param   {number} $from - breakpoint
+/// @param   {number} from - breakpoint
 from(from) {
     // Si el bp es del core de EDgrid
     if isCoreBreakpoint(from) {
