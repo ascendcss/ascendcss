@@ -1,0 +1,17 @@
+// Retorna false si no existe
+@function contains($list, $var) {
+    @if map-get($list, $var) == null or map-get($list, $var) == '' {
+        @return false;
+    } @else {
+        @return true;
+    }
+}
+
+// retorna la variable por defecto si no existe uno personalizado
+@function getVariable($default, $custom, $variable) {
+    @if contains($custom, $variable) {
+        @return map-get($custom, $variable);
+    } @else {
+        @return map-get($default, $variable);
+    }
+}

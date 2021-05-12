@@ -1,0 +1,35 @@
+@mixin box {
+	border-radius: $radius;
+    background: $secondary-bg;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .05);
+}
+@mixin scroll($background, $width: 8px) {
+    ::-webkit-scrollbar {
+        width: $width;
+    }
+    ::-webkit-scrollbar-track {
+        background: darken($background, 7%);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: lighten($background, 20%);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: lighten($background, 40%);
+    }
+}
+@mixin hr($color) {
+    border: none;
+	border-top: 1px solid $color;
+	margin-top: 0.8rem;
+	margin-bottom: 0.8rem;
+}
+
+@mixin badge($bg: tomato, $color: #fff) {
+    display: inline-block;
+    background-color: $bg;
+    color: $color;
+    padding: .2em .5em;
+    border-radius: 0.2em;
+    font-size: .75em;
+    font-weight: 600;
+}

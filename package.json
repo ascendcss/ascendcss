@@ -1,7 +1,7 @@
 {
 	"name": "ascendcss",
-	"version": "1.1.8",
-	"description": "Ascendcss is a Sass library that will help you create designs for your website in the fastest and easiest way.",
+	"version": "1.2.0",
+	"description": "Ascendcss is a Sass and Stylus library that will help you build layouts in the shortest possible time",
 	"main": "ascendcss.scss",
 	"dependencies": {},
 	"devDependencies": {
@@ -15,12 +15,13 @@
 	"scripts": {
 		"dev": "gulp dev",
 		"test": "gulp test",
-		"bundle": "bundle-scss -m \"./src/scss/ascendcss.scss\" -d \"./dist/ascencss.bundle.scss\""
+		"bundle": "node bundle"
 	},
 	"keywords": [
 		"ascendcss",
 		"css",
 		"sass",
+		"stylus",
 		"design",
 		"layout"
 	],

@@ -75,7 +75,7 @@ to(to) {
 /// from-to la regla se ejecuta entre ambos breakpoints.
 /// @param   {number} $from - breakpoint desde que medida se iniciara la regla.
 /// @param   {number} $to - breakpoint hasta que medida se ejecutara la regla.
-from_to(from, to) {
+from-to(from, to) {
     // Si ambos son breakpoints del core
     if isCoreBreakpoint(from) and isCoreBreakpoint(to) {
         if breakpoints[to] > breakpoints[from] {

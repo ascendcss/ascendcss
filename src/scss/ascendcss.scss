@@ -1,5 +1,5 @@
 // Es nesesario importar las configuraciones para su uso
-// @import '../../config';
+// @import "../../config";
 
 // importar funciones
 @import "./utilities/functions/rpt";
@@ -15,9 +15,4 @@
 
 // Importar componentes
 @import "./components/container";
-@import "./components/buttons";
-@import "./components/form";
-@import "./components/navbar";
-
-// Creditos:
-// Mixins[Mediaqueries]: (EDGrid) https://github.com/escueladigital/EDgrid
+// Creditos: Mixins[Mediaqueries]: (EDGrid) https://github.com/escueladigital/EDgrid

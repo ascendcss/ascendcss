@@ -50,3 +50,19 @@ row($row = false) {
         grid-template-rows: create-grid-values($row);
     }
 }
+
+cols($cols = false) {
+    if (!$cols) {
+        error('No se han definido las variables -> cols($cols)');
+    } else {
+        grid-column-end: span $cols;
+    }
+}
+
+rows($rows = false) {
+    if (!$rows) {
+        error('No se han definido las variables -> rows($rows)');
+    } else {
+        grid-row-end: span $rows;
+    }
+}

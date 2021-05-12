@@ -45,6 +45,30 @@
     }
 }
 
+/// @param {number} $row - Filas
+@mixin row($row: null) {
+    // Revisar si se definio una variable
+    @if $row == null and $row == null {
+        @error "No se han definido las variables -> grid($col, $row)";
+    }
+    // Si existe la variable de $row regresar declaracion
+    @if $row != null {
+        grid-template-rows: create-grid-values($row);
+    }
+}
+
+/// @param {number} $col - Columnas
+@mixin col($col: null) {
+    // Revisar si se definio una variable
+    @if $col == null {
+        @error "No se han definido las variables -> grid($col, $row)";
+    }
+    // Si existe la variable de $col regresar declaracion
+    @if $col != null {
+        grid-template-columns: create-grid-values($col);
+    }
+}
+
 @mixin ascendcss-nth($number, $cols, $tagName, $template) {
     @if $number != null and $cols != null {
         #{$tagName}:nth-child(#{$number}) {

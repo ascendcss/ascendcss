@@ -1,6 +1,3 @@
-
-
-/// Devuelve true si el breakpoint es parte del core
 @function isCoreBreakpoint($bp) {
     @if map-get($breakpoints, $bp) {
         @return true;
@@ -8,9 +5,6 @@
         @return false;
     }
 }
-
-/// Devuelve true si el breakpint es válido (em, rem, px)
-/// @param   {number} $bp - breakpoint a verificar.
 @function isValidBreakpoint($bp) {
     @if type-of($bp) == number and (unit($bp) == "px" or unit($bp) == "em" or unit($bp) == "rem") {
         @return true;
@@ -18,53 +12,27 @@
         @return false;
     }
 }
-
-/// Obtiene un breakpoint del core
-/// @param   {number} $bp - breakpoint a obtener.
-
 @function getBp($bp) {
     @return map-get($breakpoints, $bp);
 }
-
-/// From (mayor que $bp)
-/// @param   {number} $from - breakpoint
-/// @example scss
-///     .elemento {
-///       width: 30%;
-///       @include from(m) {
-///         width: 50%;
-///       }
-///     }
 @mixin from($from) {
-    // Si el bp es del core de EDgrid
     @if isCoreBreakpoint($from) {
-        // no imprime media query para tamaño s
         @if $from == xm {
             @content;
-        }
-        // imprime media query en los otros tamaños
-        @else {
+        } @else {
             @media screen and (min-width: getBp($from)) {
                 @content;
             }
         }
-    }
-    // Si el bp no es del core de EDgrid pero es una unidad válida
-    @else if isValidBreakpoint($from) {
+    } @else if isValidBreakpoint($from) {
         @media screen and (min-width: $from) {
             @content;
         }
-    }
-    // Error
-    @else {
+    } @else {
         @error 'El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem';
     }
 }
-
-/// To (es menor que $to)
-/// @param   {number} $to - breakpoint
 @mixin to($to) {
-    // Si es un breakpoint del core
     @if isCoreBreakpoint($to) {
         @if $to == xm {
             @content;
@@ -73,24 +41,15 @@
                 @content;
             }
         }
-    }
-    // Si es un breakpoint válido (px, em, rem)
-    @else if isValidBreakpoint($to) {
+    } @else if isValidBreakpoint($to) {
         @media screen and (max-width: topx($to)) {
             @content;
         }
-    }
-    // Si no es un breakpoint válido lanzar error
-    @else {
+    } @else {
         @error 'El mixin to() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem';
     }
 }
-
-/// from-to la regla se ejecuta entre ambos breakpoints.
-/// @param   {number} $from - breakpoint desde que medida se iniciara la regla.
-/// @param   {number} $to - breakpoint hasta que medida se ejecutara la regla.
 @mixin from-to($from, $to) {
-    // Si ambos son breakpoints del core
     @if isCoreBreakpoint($from) and isCoreBreakpoint($to) {
         @if getBp($to) > getBp($from) {
             @media screen and (min-width: getBp($from)) and (max-width: getBp($to)) {
@@ -99,10 +58,7 @@
         } @else {
             @error "El segundo argumento del mixin from-to debe ser mayor que el primero";
         }
-    }
-
-    // Si solo $from es breakpoint del core
-    @else if isCoreBreakpoint($from) and not isCoreBreakpoint($to) {
+    } @else if isCoreBreakpoint($from) and not isCoreBreakpoint($to) {
         @if isValidBreakpoint($to) {
             @if topx($to) > topx(getBp($from)) {
                 @media screen and (min-width: getBp($from)) and (max-width: topx($to)) {
@@ -114,10 +70,7 @@
         } @else {
             @error "El segundo argumento del mixin from-to() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem";
         }
-    }
-
-    // Si solo $to es breakpoint del core
-    @else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
+    } @else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
         @if isValidBreakpoint($from) {
             @if topx(getBp($to)) > topx($from) {
                 @media screen and (min-width: $from) and (max-width: getBp($to)) {
@@ -129,10 +82,7 @@
         } @else {
             @error "El primer argumento del mixin from-to() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem";
         }
-    }
-
-    // Si no son breakpoints del core pero son breakpoints válidos (px, em, rem)
-    @else if isValidBreakpoint($from) and isValidBreakpoint($to) {
+    } @else if isValidBreakpoint($from) and isValidBreakpoint($to) {
         @if topx($to) > topx($from) {
             @media screen and (min-width: $from) and (max-width: topx($to)) {
                 @content;
@@ -140,22 +90,51 @@
         } @else {
             @error "El segundo argumento del mixin from-to debe ser mayor que el primero";
         }
-    }
-
-    // Si al menos hay un breakpoint inválido
-    @else {
+    } @else {
         @error 'Los argumentos del mixin from-to() deben ser breakpoints del Core (#{map-keys($breakpoints)}) o números en px, em o rem';
     }
-}@mixin text-gradient($linear-gradient: linear-gradient(red, blue)) {
+}
+@mixin box {
+    border-radius: $radius;
+    background: $secondary-bg;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.05);
+}
+@mixin scroll($background, $width: 8px) {
+    ::-webkit-scrollbar {
+        width: $width;
+    }
+    ::-webkit-scrollbar-track {
+        background: darken($background, 7%);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: lighten($background, 20%);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: lighten($background, 40%);
+    }
+}
+@mixin hr($color) {
+    border: none;
+    border-top: 1px solid $color;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+@mixin badge($bg: tomato, $color: #fff) {
+    display: inline-block;
+    background-color: $bg;
+    color: $color;
+    padding: 0.2em 0.5em;
+    border-radius: 0.2em;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+@mixin text-gradient($linear-gradient: linear-gradient(red, blue)) {
     background: $linear-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-}//  Repetir un valor x veces
-/// @param {number} $number - Numero de veces que se repetira
-/// @param {string} $value - variable que se repetira
-/// @return {string}.
+}
 @function rpt($number, $value) {
     $values: "";
     @for $i from 1 through $number {
@@ -166,8 +145,7 @@
         }
     }
     @return unquote($values);
-}/// Convierte un valor en em o rem a px
-/// @param   {number} $value - var a convertir a pixeles.
+}
 @function topx($value) {
     @if type-of($value) == number {
         @if unit($value) == "em" {
@@ -183,19 +161,12 @@
         @error "La funcion toPx() solo acepta numeros en em o rem";
     }
 }
-
-
-
-//  Generar valores de filas o columnas
-/// @param {string} $values -  datos par crear el numero de columnas o filas
-/// @return {string} - CSS Value;
 @function create-grid-values($values) {
-    // convertir $values en una lista para iterar
     $values: check-and-split($values + "");
     $r: "";
     $n: 1;
     @each $value in $values {
-        @if type-of(number($value)) != 'number' {
+        @if type-of(number($value)) != "number" {
             @error "'#{$values}' no son numeros";
         }
         $value: $value + "fr";
@@ -208,27 +179,34 @@
     }
     @return unquote($r);
 }
-
-/// Generar grid
-/// @param {number} $col - Columnas
-/// @param {number} $row - Filas
 @mixin grid($col: null, $row: null) {
-    // Revisar si se definio una variable
     @if $col == null and $row == null {
         @error "No se han definido las variables -> grid($col, $row)";
     }
     display: grid;
-
-    // Si existe la variable de $col regresar declaracion
     @if $col != null {
         grid-template-columns: create-grid-values($col);
     }
-    // Si existe la variable de $row regresar declaracion
     @if $row != null {
         grid-template-rows: create-grid-values($row);
     }
 }
-
+@mixin row($row: null) {
+    @if $row == null and $row == null {
+        @error "No se han definido las variables -> grid($col, $row)";
+    }
+    @if $row != null {
+        grid-template-rows: create-grid-values($row);
+    }
+}
+@mixin col($col: null) {
+    @if $col == null {
+        @error "No se han definido las variables -> grid($col, $row)";
+    }
+    @if $col != null {
+        grid-template-columns: create-grid-values($col);
+    }
+}
 @mixin ascendcss-nth($number, $cols, $tagName, $template) {
     @if $number != null and $cols != null {
         #{$tagName}:nth-child(#{$number}) {
@@ -236,7 +214,6 @@
         }
     }
 }
-
 @mixin ascendcss-span-nth($number, $cols, $tagName, $template) {
     @if $number != null and $cols != null {
         #{$tagName}:nth-child(#{$number}) {
@@ -244,71 +221,53 @@
         }
     }
 }
-
 @mixin cols($cols) {
     grid-column-end: span $cols;
 }
-
 @mixin cols-nth($number: null, $cols: null, $tagName: div) {
     @include ascendcss-span-nth($number, $cols, $tagName, grid-column-end);
 }
-
 @mixin cols-st($col-st) {
     grid-column-start: $col-st;
 }
 @mixin col-st-nth($number: null, $col-st: null, $tagName: div) {
     @include ascendcss-nth($number, $col-st, $tagName, grid-column-start);
 }
-
 @mixin rows($rows) {
     grid-row-end: span $rows;
 }
-
 @mixin rows-nth($number: null, $cols: null, $tagName: div) {
     @include ascendcss-span-nth($number, $cols, $tagName, grid-row-end);
 }
-
 @mixin cols-st($row-st) {
     grid-row-start: $row-st;
 }
-
 @mixin row-st-nth($number: null, $col-st: null, $tagName: div) {
     @include ascendcss-nth($number, $col-st, $tagName, grid-row-start);
 }
-
-// Verificar espacios y separar par devolver una lista
-/// @param {string} $values - String para convertir en lista
-/// @return {list};
 @function check-and-split($values) {
     @if str-slice($values, 1, 1) == " " {
         $values: str-slice($values, 2, -1);
     }
     $values: str-split($values, " ");
-    @return $values
-}// Separar string y convertir en lista
-/// @param {string} $string - String a separar
-/// @param {string} $separator - Especifica el caracter a usar para la separación de la cadena. 
-/// @return {list};
+    @return $values;
+}
 @function str-split($string, $separator) {
-	$split-arr: ();
-	$index: str-index($string, $separator);
-	@while $index != null {
-		$item: str-slice($string, 1, $index - 1);
-		$split-arr: append($split-arr, $item);
-		$string: str-slice($string, $index + 1);
-		$index: str-index($string, $separator);
-	}
-	$split-arr: append($split-arr, $string);
-
-	@return $split-arr;
-}//  Convertir string a numero
-/// @param {string} $value - String que se convertira a numero
-/// @return {number}.
+    $split-arr: ();
+    $index: str-index($string, $separator);
+    @while $index != null {
+        $item: str-slice($string, 1, $index - 1);
+        $split-arr: append($split-arr, $item);
+        $string: str-slice($string, $index + 1);
+        $index: str-index($string, $separator);
+    }
+    $split-arr: append($split-arr, $string);
+    @return $split-arr;
+}
 @function number($value) {
     @if type-of($value) == "number" {
         @return $value;
     }
-
     $result: 0;
     $digits: 0;
     $minus: str-slice($value, 1, 1) == "-";
@@ -324,14 +283,11 @@
         "8": 8,
         "9": 9,
     );
-
     @for $i from if($minus, 2, 1) through str-length($value) {
         $character: str-slice($value, $i, $i);
-
         @if not(index(map-keys($numbers), $character) or $character == ".") {
             @return to-length(if($minus, -$result, $result), str-slice($value, $i));
         }
-
         @if $character == "." {
             $digits: 1;
         } @else if $digits == 0 {
@@ -341,211 +297,42 @@
             $result: $result + map-get($numbers, $character) / $digits;
         }
     }
-
     @return if($minus, -$result, $result);
-}@mixin center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+}
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @mixin center-x {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 @mixin center-y {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 @mixin top {
-	display: flex;
-	align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
 }
 @mixin bottom {
-	display: flex;
-	align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 }
 @mixin left {
-	display: flex;
-	justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
 }
 @mixin right {
-	display: flex;
-	justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
-@mixin text-center {
-	text-align: center;
-}
-@mixin text-left {
-	text-align: left;
-}
-@mixin text-right {
-	text-align: right;
-}@mixin container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  @include from(md) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
-@mixin acss_main-btn {
-	padding: 0.5rem 0.7rem;
-	margin: 8px 0;
-	border: none;
-	border-radius: 0.2rem;
-	cursor: pointer;
-	transition: 0.1s;
-	outline: none;
-	text-decoration: none;
-	font-size: 1rem;
-	&:active {
-		transform: scale(0.98);
-	}
-}
-
-@mixin btn($bg: #000, $color: #fff) {
-	@include acss_main-btn;
-	background-color: $bg;
-	border: 1px solid $bg;
-	color: $color;
-	&:hover {
-		background-color: darken($bg, 6%);
-		border: 1px solid darken($bg, 6%);
-	}
-}@mixin input($bg: #f2f2f2) {
-	padding: 8px 16px;
-	margin: 8px 0;
-	display: inline-block;
-	background-color: $bg;
-	border: 1px solid $bg;
-	border-radius: 0.2rem;
-	width: 100%;
-	&::placeholder {
-		opacity: 75%;
-	}
-	&:focus {
-		background-color: lighten($bg, 10%);
-		outline: none;
-		border-bottom: 1px solid $primary-color;
-	}
-}@mixin navbar($bg: #000, $color: #fff, $hg: 60px, $content-cols: 10fr 2fr) {
-    background-color: $bg;
-    display: grid;
-    grid-template-columns: 11fr 1fr;
-    grid-template-rows: $hg;
-    height: $hg;
-    color: $color;
-    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
-    .navbar-brand {
-        color: $color;
-        font-weight: 600;
-        display: flex;
-        padding-left: 15px;
-        align-items: center;
-        text-decoration: none;
-    }
-    .navbar-content {
-        position: relative;
-        z-index: 999999;
-        display: none;
-        padding: 10px 10px 20px 10px;
-        background-color: $bg;
-        width: 100%;
-        transition: 0.3s;
-        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
-        grid-column-end: span 2;
-    }
-    .navbar-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        color: $color;
-        a {
-            color: $color;
-            margin: 10px 0;
-        }
-        a:last-child {
-            margin-bottom: 30px;
-        }
-    }
-    .navbar-right {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        color: $color;
-        a {
-            color: $color;
-        }
-    }
-    .navbar-toggler {
-        border: none;
-        background: transparent;
-        text-align: center;
-        text-decoration: none;
-        outline: none;
-        color: $color;
-        padding-right: 15px;
-    }
-    .navbar-show {
-        display: block;
-    }
-    .active-link {
-        font-weight: 600;
-    }
-    @include from(lg) {
-        grid-template-columns: 2fr 10fr;
-        .navbar-content {
-            position: relative;
-            display: grid;
-            padding: 0;
-            grid-template-rows: 1fr;
-            grid-template-columns: $content-cols;
-            grid-column-end: span 1;
-            height: 100%;
-            box-shadow: none;
-        }
-        .navbar-links {
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            a {
-                margin: 0 0.8rem;
-            }
-            a:last-child {
-                margin: 0 0.8rem;
-            }
-        }
-        .navbar-toggler {
-            display: none;
-        }
-        .navbar-right {
-            padding-right: 10px;
-        }
+@mixin container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include from(md) {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
-// Es nesesario importar las configuraciones para su uso
-// 
-
-// importar funciones
-
-
-
-// Importar mixins
-
-
-
-// Importar layout
-
-
-
-// Importar componentes
-
-
-
-
-
-// Creditos:
-// Mixins[Mediaqueries]: (EDGrid) https://github.com/escueladigital/EDgrid
