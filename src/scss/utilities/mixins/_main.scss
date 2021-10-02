@@ -1,5 +1,4 @@
 @import '../functions/topx';
-@import './others';
 
 /// Devuelve true si el breakpoint es parte del core
 @function isCoreBreakpoint($bp) {

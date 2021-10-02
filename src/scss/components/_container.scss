@@ -1,8 +1,0 @@
-@mixin container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  @include from(md) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}

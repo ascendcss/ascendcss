@@ -1,16 +1,15 @@
 {
 	"name": "ascendcss",
-	"version": "1.2.0",
+	"version": "1.2.2",
 	"description": "Ascendcss is a Sass and Stylus library that will help you build layouts in the shortest possible time",
 	"main": "ascendcss.scss",
-	"dependencies": {},
 	"devDependencies": {
 		"bundle-scss": "^1.5.0",
 		"gulp": "^4.0.2",
-		"gulp-concat": "^2.6.1",
-		"gulp-sass": "^4.1.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.0.0",
 		"gulp-stylus": "^2.7.0",
-		"node-sass": "^5.0.0"
+		"sass": "^1.42.1"
 	},
 	"scripts": {
 		"dev": "gulp dev",
